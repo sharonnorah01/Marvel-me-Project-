@@ -1,0 +1,6 @@
+{
+  "name": "Marvel Me | Luxury Curated Gifts",
+  "description": "Marvel Me delivers gifts that feel like a hug. Explore luxury gift hampers, bespoke wrapping, picnic sets, and personalized surprises with seamless delivery scheduling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
