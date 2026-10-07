@@ -39,7 +39,7 @@ export const ConsultationModal: React.FC = () => {
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-[#daaf37]" />
             <span className="font-serif-luxury text-xl font-medium tracking-wide">
-              Bespoke Gift Consultation
+              Custom Gift Consultation
             </span>
           </div>
 
