@@ -1,3 +1,11 @@
+import {
+  heroLuxuryGiftBox,
+  productLuxuryHamper,
+  productLuxuryPicnic,
+  productGiftWrapping,
+  productSurpriseBox,
+} from '../assets/images';
+
 export interface CustomerReview {
   id: string;
   author: string;
@@ -116,9 +124,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '32cm x 24cm x 14cm · Weight 2.4kg',
     images: [
-      '/src/assets/images/product_luxury_hamper_1791315989920.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_gift_wrapping_1791316011135.jpg',
+      productLuxuryHamper,
+      heroLuxuryGiftBox,
+      productGiftWrapping,
     ],
     occasions: ['Birthday', 'Anniversary', 'Thank You', 'Self-Care', 'Thinking of You'],
     reviews: [
@@ -165,9 +173,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '48cm x 34cm x 22cm · Weight 4.8kg',
     images: [
-      '/src/assets/images/product_luxury_picnic_1791315999972.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_luxury_hamper_1791315989920.jpg',
+      productLuxuryPicnic,
+      heroLuxuryGiftBox,
+      productLuxuryHamper,
     ],
     occasions: ['Anniversary', 'Romantic', 'Birthday', 'Milestone'],
     reviews: [
@@ -204,9 +212,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '26cm x 26cm x 18cm · Weight 1.8kg',
     images: [
-      '/src/assets/images/product_surprise_box_1791316021899.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_gift_wrapping_1791316011135.jpg',
+      productSurpriseBox,
+      heroLuxuryGiftBox,
+      productGiftWrapping,
     ],
     occasions: ['Birthday', 'Romantic', 'Milestone', 'Anniversary'],
     reviews: [
@@ -243,9 +251,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: 'Custom tailored to any package size',
     images: [
-      '/src/assets/images/product_gift_wrapping_1791316011135.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_surprise_box_1791316021899.jpg',
+      productGiftWrapping,
+      heroLuxuryGiftBox,
+      productSurpriseBox,
     ],
     occasions: ['Any Occasion', 'Holiday', 'Birthday', 'Wedding'],
     reviews: [
@@ -282,9 +290,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '30cm x 22cm x 10cm · Weight 1.9kg',
     images: [
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_luxury_hamper_1791315989920.jpg',
-      '/src/assets/images/product_surprise_box_1791316021899.jpg',
+      heroLuxuryGiftBox,
+      productLuxuryHamper,
+      productSurpriseBox,
     ],
     occasions: ['Corporate', 'Milestone', 'Thank You'],
     reviews: [
@@ -320,9 +328,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '18cm x 13cm sleeve',
     images: [
-      '/src/assets/images/product_surprise_box_1791316021899.jpg',
-      '/src/assets/images/product_gift_wrapping_1791316011135.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
+      productSurpriseBox,
+      productGiftWrapping,
+      heroLuxuryGiftBox,
     ],
     occasions: ['Birthday', 'Wedding', 'Holiday', 'Thank You'],
     reviews: [
@@ -358,9 +366,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: 'Service Experience & Bespoke Curation',
     images: [
-      '/src/assets/images/product_gift_wrapping_1791316011135.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_luxury_hamper_1791315989920.jpg',
+      productGiftWrapping,
+      heroLuxuryGiftBox,
+      productLuxuryHamper,
     ],
     occasions: ['Wedding', 'Corporate', 'Milestone', 'Anniversary'],
     reviews: [
@@ -396,9 +404,9 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '42cm x 30cm x 24cm · Weight 3.9kg',
     images: [
-      '/src/assets/images/product_luxury_picnic_1791315999972.jpg',
-      '/src/assets/images/hero_luxury_gift_box_1791315976640.jpg',
-      '/src/assets/images/product_luxury_hamper_1791315989920.jpg',
+      productLuxuryPicnic,
+      heroLuxuryGiftBox,
+      productLuxuryHamper,
     ],
     occasions: ['Romantic', 'Anniversary', 'Birthday'],
     reviews: [

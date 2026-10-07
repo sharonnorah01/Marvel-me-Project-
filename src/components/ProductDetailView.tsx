@@ -133,6 +133,12 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
               <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-[#D9D2C7] bg-[#F4EFEA] shadow-sm">
                 <img
                   src={product.images[activeImageIndex] || product.images[0]}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
+                      target.src = '/images/hero_luxury_gift_box.jpg';
+                    }
+                  }}
                   alt={product.name}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center"
@@ -154,7 +160,17 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                         activeImageIndex === idx ? 'border-[#A58457] scale-102 shadow-sm' : 'border-[#E2DBD0] opacity-70 hover:opacity-100'
                       }`}
                     >
-                      <img src={img} alt="" className="w-full h-full object-cover" />
+                      <img
+                        src={img}
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
+                            target.src = '/images/hero_luxury_gift_box.jpg';
+                          }
+                        }}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
                     </button>
                   ))}
                 </div>

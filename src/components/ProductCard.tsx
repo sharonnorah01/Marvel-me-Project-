@@ -19,6 +19,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F6F2EA]">
         <img
           src={product.images[0]}
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
+              target.src = '/images/hero_luxury_gift_box.jpg';
+            }
+          }}
           alt={product.name}
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"

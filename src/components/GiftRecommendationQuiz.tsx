@@ -214,6 +214,12 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                   >
                     <img
                       src={product.images[0]}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
+                          target.src = '/images/hero_luxury_gift_box.jpg';
+                        }
+                      }}
                       alt={product.name}
                       className="w-full sm:w-28 h-28 object-cover rounded-[8px] border border-[#E8E2D8] shrink-0"
                     />

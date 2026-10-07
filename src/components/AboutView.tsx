@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
 import { Heart, Sparkles, Ribbon, ShieldCheck, ArrowRight, Award, Compass, Users } from 'lucide-react';
+import { productGiftWrapping } from '../assets/images';
 
 export const AboutView: React.FC = () => {
   const { setCurrentView, setIsQuizOpen, setIsConsultationOpen } = useCart();
@@ -52,7 +53,13 @@ export const AboutView: React.FC = () => {
         <div className="lg:col-span-5 relative">
           <div className="rounded-[8px] overflow-hidden border border-[#D9D2C7] bg-white shadow-xl relative">
             <img
-              src="/src/assets/images/product_gift_wrapping_1791316011135.jpg"
+              src={productGiftWrapping}
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes('/images/product_gift_wrapping.jpg')) {
+                  target.src = '/images/product_gift_wrapping.jpg';
+                }
+              }}
               alt="Marvel Me gift wrapping craftsmanship"
               className="w-full h-[440px] object-cover"
             />

@@ -107,6 +107,12 @@ export const CartDrawer: React.FC = () => {
                     <div className="flex gap-3">
                       <img
                         src={item.product.images[0]}
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
+                            target.src = '/images/hero_luxury_gift_box.jpg';
+                          }
+                        }}
                         alt={item.product.name}
                         className="w-18 h-18 rounded-[8px] object-cover border border-[#E8E2D8] shrink-0"
                       />

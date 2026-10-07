@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
 import { ArrowRight, Sparkles, ShieldCheck, HeartHandshake, CalendarCheck } from 'lucide-react';
+import { heroLuxuryGiftBox } from '../assets/images';
 
 export const Hero: React.FC = () => {
   const { setCurrentView, setSelectedCategoryFilter, setIsQuizOpen, setIsConsultationOpen } = useCart();
@@ -90,7 +91,13 @@ export const Hero: React.FC = () => {
               {/* Outer decorative gold hairline border container with 8px radius */}
               <div className="relative rounded-[8px] overflow-hidden border border-[#D9D2C7] bg-white shadow-xl">
                 <img
-                  src="/src/assets/images/hero_luxury_gift_box_1791315976640.jpg"
+                  src={heroLuxuryGiftBox}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
+                      target.src = '/images/hero_luxury_gift_box.jpg';
+                    }
+                  }}
                   alt="Marvel Me luxury bespoke gift box wrapped with gold ribbon"
                   referrerPolicy="no-referrer"
                   className="w-full h-[360px] sm:h-[460px] object-cover object-center transform hover:scale-[1.01] transition-transform duration-700"
