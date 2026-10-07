@@ -70,10 +70,10 @@ export const ShopView: React.FC = () => {
       <div className="border-b border-[#E8E2D8] pb-6 space-y-2">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="text-xs uppercase tracking-widest text-[#8C6D3B] font-semibold mb-1">
+            <div className="text-xs uppercase tracking-widest text-[#d9a300] font-semibold mb-1">
               Curated Gift Catalog
             </div>
-            <h1 className="font-serif-luxury text-3xl sm:text-4xl text-[#1C1A18] font-medium">
+            <h1 className="font-serif-luxury text-3xl sm:text-4xl text-[#222222] font-medium">
               Explore The Marvel Me Collection
             </h1>
             <p className="text-xs sm:text-sm text-[#66615B] mt-1 max-w-xl">
@@ -84,9 +84,9 @@ export const ShopView: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsQuizOpen(true)}
-              className="px-4 py-2 bg-white text-[#2D2A26] border border-[#D9D2C7] hover:border-[#A58457] rounded-[8px] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
+              className="px-4 py-2 bg-white text-[#2D2A26] border border-[#D9D2C7] hover:border-[#daaf37] rounded-[8px] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#A58457]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#daaf37]" />
               <span>Take Gift Quiz</span>
             </button>
             <span className="text-xs text-[#7A746B] tabular-nums">
@@ -107,8 +107,8 @@ export const ShopView: React.FC = () => {
                 onClick={() => setSelectedCategoryFilter(cat.id)}
                 className={`px-4 py-2 rounded-[8px] text-xs font-medium whitespace-nowrap transition-all cursor-pointer border ${
                   isSelected
-                    ? 'bg-[#1C1A18] text-[#FAF7F2] border-[#1C1A18] shadow-sm'
-                    : 'bg-white text-[#4A4641] border-[#E2DBD0] hover:border-[#C5A880] hover:bg-[#FAF7F2]'
+                    ? 'bg-[#222222] text-[#FAF7F2] border-[#222222] shadow-sm ring-1 ring-[#daaf37]'
+                    : 'bg-white text-[#4A4641] border-[#E2DBD0] hover:border-[#daaf37] hover:bg-[#FAF7F2]'
                 }`}
               >
                 {cat.name}
@@ -122,7 +122,7 @@ export const ShopView: React.FC = () => {
           
           {/* Occasion Filter */}
           <div className="flex items-center gap-2 overflow-x-auto">
-            <span className="font-semibold text-[#1C1A18] uppercase tracking-wider text-[11px] shrink-0">
+            <span className="font-semibold text-[#222222] uppercase tracking-wider text-[11px] shrink-0">
               Occasion:
             </span>
             <div className="flex gap-1.5 overflow-x-auto">
@@ -132,8 +132,8 @@ export const ShopView: React.FC = () => {
                   onClick={() => setSelectedOccasion(occ)}
                   className={`px-2.5 py-1 rounded-[6px] text-xs transition-colors cursor-pointer whitespace-nowrap ${
                     selectedOccasion === occ
-                      ? 'bg-[#FAF7F2] text-[#8C6D3B] font-bold border border-[#C5A880]'
-                      : 'text-[#66615B] hover:text-[#1C1A18]'
+                      ? 'bg-[#FAF7F2] text-[#b88e22] font-bold border border-[#daaf37]'
+                      : 'text-[#66615B] hover:text-[#222222]'
                   }`}
                 >
                   {occ}
@@ -150,7 +150,7 @@ export const ShopView: React.FC = () => {
               <select
                 value={priceRange}
                 onChange={(e) => setPriceRange(e.target.value as any)}
-                className="bg-[#FAF7F2] border border-[#D9D2C7] rounded-[6px] px-2.5 py-1 text-xs focus:outline-none focus:border-[#A58457]"
+                className="bg-[#FAF7F2] border border-[#D9D2C7] rounded-[6px] px-2.5 py-1 text-xs focus:outline-none focus:border-[#daaf37]"
               >
                 <option value="All">All Budgets</option>
                 <option value="under100">Under $100</option>
@@ -165,7 +165,7 @@ export const ShopView: React.FC = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-[#FAF7F2] border border-[#D9D2C7] rounded-[6px] px-2.5 py-1 text-xs focus:outline-none focus:border-[#A58457]"
+                className="bg-[#FAF7F2] border border-[#D9D2C7] rounded-[6px] px-2.5 py-1 text-xs focus:outline-none focus:border-[#daaf37]"
               >
                 <option value="featured">Featured First</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -197,10 +197,10 @@ export const ShopView: React.FC = () => {
       {/* Products Grid */}
       {filteredProducts.length === 0 ? (
         <div className="text-center py-20 bg-white rounded-[8px] border border-[#E2DBD0] space-y-4">
-          <div className="w-16 h-16 rounded-full bg-[#FAF7F2] border border-[#D9D2C7] flex items-center justify-center mx-auto text-[#A58457]">
+          <div className="w-16 h-16 rounded-full bg-[#FAF7F2] border border-[#D9D2C7] flex items-center justify-center mx-auto text-[#daaf37]">
             <Search className="w-7 h-7" />
           </div>
-          <h3 className="font-serif-luxury text-2xl text-[#1C1A18]">
+          <h3 className="font-serif-luxury text-2xl text-[#222222]">
             No curations matched your filters
           </h3>
           <p className="text-xs text-[#7A746B] max-w-sm mx-auto leading-relaxed">
@@ -213,7 +213,7 @@ export const ShopView: React.FC = () => {
               setPriceRange('All');
               setSearchQuery('');
             }}
-            className="px-6 py-2.5 bg-[#1C1A18] text-[#FAF7F2] text-xs font-semibold rounded-[8px] hover:bg-[#33302C] transition-colors cursor-pointer"
+            className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] text-xs font-semibold rounded-[8px] hover:bg-[#333333] transition-colors cursor-pointer"
           >
             Clear All Filters
           </button>
@@ -227,12 +227,12 @@ export const ShopView: React.FC = () => {
       )}
 
       {/* Category Story / Consultation Assistance Banner */}
-      <div className="p-8 rounded-[8px] bg-[#FAF7F2] border border-[#C5A880]/30 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="p-8 rounded-[8px] bg-[#FAF7F2] border border-[#daaf37]/40 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-1 text-center md:text-left">
-          <div className="text-xs uppercase tracking-wider font-semibold text-[#8C6D3B]">
+          <div className="text-xs uppercase tracking-wider font-semibold text-[#daaf37]">
             Need a bespoke custom curation?
           </div>
-          <h3 className="font-serif-luxury text-2xl text-[#1C1A18] font-medium">
+          <h3 className="font-serif-luxury text-2xl text-[#222222] font-medium">
             Private Gifting Stylist Consultations
           </h3>
           <p className="text-xs text-[#5C574F] max-w-xl">
@@ -244,11 +244,10 @@ export const ShopView: React.FC = () => {
           onClick={() => {
             const consultationProduct = PRODUCTS.find((p) => p.category === 'Gift Consultations');
             if (consultationProduct) {
-              // Open PDP or open consultation
               setSelectedCategoryFilter('Gift Consultations');
             }
           }}
-          className="px-6 py-3 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-semibold rounded-[8px] transition-colors shrink-0 cursor-pointer shadow-sm"
+          className="px-6 py-3 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors shrink-0 cursor-pointer shadow-sm"
         >
           Explore Consultation Service
         </button>

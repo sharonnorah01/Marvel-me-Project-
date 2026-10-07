@@ -31,13 +31,13 @@ export const ConsultationModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-[#222222]/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
       <div className="relative bg-[#FAF7F2] text-[#2D2A26] w-full max-w-xl rounded-[8px] shadow-2xl border border-[#D9D2C7] overflow-hidden flex flex-col">
         
         {/* Header */}
-        <div className="bg-[#1C1A18] text-[#FAF7F2] px-6 py-4 flex items-center justify-between border-b border-[#C5A880]/30">
+        <div className="bg-[#222222] text-[#FAF7F2] px-6 py-4 flex items-center justify-between border-b border-[#daaf37]/30">
           <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-[#C5A880]" />
+            <Calendar className="w-4 h-4 text-[#daaf37]" />
             <span className="font-serif-luxury text-xl font-medium tracking-wide">
               Bespoke Gift Consultation
             </span>
@@ -57,10 +57,10 @@ export const ConsultationModal: React.FC = () => {
           {!isBooked ? (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-1">
-                <span className="text-[11px] uppercase tracking-widest text-[#8C6D3B] font-semibold">
+                <span className="text-[11px] uppercase tracking-widest text-[#daaf37] font-semibold">
                   Personal Stylist Session
                 </span>
-                <h3 className="font-serif-luxury text-2xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-2xl text-[#222222] font-medium">
                   Curate the Unforgettable
                 </h3>
                 <p className="text-xs text-[#66615B] leading-relaxed">
@@ -80,7 +80,7 @@ export const ConsultationModal: React.FC = () => {
                       placeholder="e.g. Genevieve Laurent"
                       value={clientName}
                       onChange={(e) => setClientName(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
 
@@ -94,7 +94,7 @@ export const ConsultationModal: React.FC = () => {
                       placeholder="genevieve@example.com"
                       value={clientEmail}
                       onChange={(e) => setClientEmail(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export const ConsultationModal: React.FC = () => {
                     <select
                       value={occasionType}
                       onChange={(e) => setOccasionType(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     >
                       <option value="Wedding & Bridal Favors">Wedding & Bridal Favors</option>
                       <option value="Executive Corporate Gifting">Executive Corporate Gifting</option>
@@ -124,7 +124,7 @@ export const ConsultationModal: React.FC = () => {
                     <select
                       value={recipientCount}
                       onChange={(e) => setRecipientCount(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     >
                       <option value="1 - 5 recipients">1 - 5 recipients</option>
                       <option value="6 - 20 recipients">6 - 20 recipients</option>
@@ -142,7 +142,7 @@ export const ConsultationModal: React.FC = () => {
                       type="date"
                       value={preferredDate}
                       onChange={(e) => setPreferredDate(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
 
@@ -153,7 +153,7 @@ export const ConsultationModal: React.FC = () => {
                     <select
                       value={consultationFormat}
                       onChange={(e) => setConsultationFormat(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     >
                       <option value="Virtual Video Concierge">Virtual Video Concierge</option>
                       <option value="Phone Consultation">Phone Consultation</option>
@@ -171,7 +171,7 @@ export const ConsultationModal: React.FC = () => {
                     placeholder="Tell us about the recipients, specific aesthetic preferences, or custom branding..."
                     value={specialRequests}
                     onChange={(e) => setSpecialRequests(e.target.value)}
-                    className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                    className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                   />
                 </div>
               </div>
@@ -180,31 +180,31 @@ export const ConsultationModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="text-xs text-[#7A746B] hover:text-[#1C1A18] cursor-pointer"
+                  className="text-xs text-[#7A746B] hover:text-[#222222] cursor-pointer"
                 >
                   Cancel
                 </button>
 
                 <button
                   type="submit"
-                  className="px-6 py-2.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
+                  className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#daaf37]" />
                   <span>Request Stylist Appointment</span>
                 </button>
               </div>
             </form>
           ) : (
             <div className="space-y-5 text-center py-4 animate-in fade-in duration-300">
-              <div className="w-14 h-14 rounded-full bg-white border border-[#C5A880] text-[#245D33] flex items-center justify-center mx-auto shadow-sm">
+              <div className="w-14 h-14 rounded-full bg-white border border-[#daaf37] text-[#245D33] flex items-center justify-center mx-auto shadow-sm">
                 <Check className="w-6 h-6 stroke-[3]" />
               </div>
 
               <div className="space-y-1">
-                <span className="text-[11px] uppercase tracking-widest text-[#8C6D3B] font-semibold">
+                <span className="text-[11px] uppercase tracking-widest text-[#daaf37] font-semibold">
                   Appointment Reserved
                 </span>
-                <h3 className="font-serif-luxury text-3xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-3xl text-[#222222] font-medium">
                   We look forward to styling with you.
                 </h3>
                 <p className="text-xs text-[#524E48] max-w-sm mx-auto leading-relaxed">
@@ -222,7 +222,7 @@ export const ConsultationModal: React.FC = () => {
               <button
                 type="button"
                 onClick={handleClose}
-                className="px-6 py-2.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-medium rounded-[8px] transition-colors cursor-pointer"
+                className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-medium rounded-[8px] transition-colors cursor-pointer"
               >
                 Return to Shop
               </button>

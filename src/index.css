@@ -7,8 +7,9 @@
     --font-script: 'Great Vibes', cursive;
     --color-cream: #FAF7F2;
     --color-charcoal: #2D2A26;
-    --color-gold: #C5A880;
-    --color-gold-dark: #A58457;
+    --color-black: #222222;
+    --color-gold: #daaf37;
+    --color-gold-dark: #b88e22;
   }
 
   body {
@@ -40,6 +41,6 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A880;
+  background: #daaf37;
 }
 

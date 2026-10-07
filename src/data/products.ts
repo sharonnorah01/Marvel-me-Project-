@@ -59,7 +59,7 @@ export const GIFT_WRAPPING_OPTIONS: GiftWrappingOption[] = [
     description: 'Textured handmade ivory paper wrapped in double-faced champagne satin ribbon with dried botanical sprig.',
     price: 0,
     previewColor: '#FAF7F2',
-    accentColor: '#C5A880',
+    accentColor: '#daaf37',
   },
   {
     id: 'gold-foil-velvet',
@@ -74,8 +74,8 @@ export const GIFT_WRAPPING_OPTIONS: GiftWrappingOption[] = [
     name: 'Midnight Noir & Gold Wax Seal',
     description: 'Architectural matte charcoal box with golden gilded ribbon and hand-stamped Marvel Me emblem wax seal.',
     price: 15,
-    previewColor: '#1E1E1E',
-    accentColor: '#C5A880',
+    previewColor: '#222222',
+    accentColor: '#daaf37',
   },
   {
     id: 'pure-linen-botanical',
@@ -83,7 +83,7 @@ export const GIFT_WRAPPING_OPTIONS: GiftWrappingOption[] = [
     description: 'Hand-torn raw linen ribbon, deckle-edged gift card with genuine pressed field hydrangeas.',
     price: 9,
     previewColor: '#F0ECE4',
-    accentColor: '#8C6D3B',
+    accentColor: '#b88e22',
   },
   {
     id: 'eco-minimalist',
@@ -97,8 +97,8 @@ export const GIFT_WRAPPING_OPTIONS: GiftWrappingOption[] = [
 
 export const CARD_STYLES = [
   { id: 'letterpress-cream', name: 'Letterpress Warm Cream', fontStyle: 'font-handwriting', bg: 'bg-[#FAF7F2]' },
-  { id: 'gold-gilded', name: 'Gold Gilded Edge', fontStyle: 'font-handwriting', bg: 'bg-[#FFFDF9] border border-[#C5A880]/30' },
-  { id: 'noir-velvet', name: 'Midnight & Gold Calligraphy', fontStyle: 'font-handwriting text-[#D4AF37]', bg: 'bg-[#1C1A18] text-[#D4AF37]' },
+  { id: 'gold-gilded', name: 'Gold Gilded Edge', fontStyle: 'font-handwriting', bg: 'bg-[#FFFDF9] border border-[#daaf37]/40' },
+  { id: 'noir-velvet', name: 'Midnight & Gold Calligraphy', fontStyle: 'font-handwriting text-[#daaf37]', bg: 'bg-[#222222] text-[#daaf37]' },
 ];
 
 export const PRODUCTS: Product[] = [

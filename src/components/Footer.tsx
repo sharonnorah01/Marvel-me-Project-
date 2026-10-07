@@ -14,13 +14,13 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#1C1A18] text-[#FAF7F2] border-t border-[#33302C] mt-20">
+    <footer className="bg-[#222222] text-[#FAF7F2] border-t border-[#333333] mt-20">
       
       {/* Newsletter Privilege Section */}
       <div className="border-b border-white/10 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
           <div className="space-y-1 max-w-xl">
-            <span className="text-[11px] uppercase tracking-widest text-[#C5A880] font-semibold">
+            <span className="text-[11px] uppercase tracking-widest text-[#daaf37] font-semibold">
               The Marvel Me Atelier Journal
             </span>
             <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#FAF7F2] font-medium">
@@ -40,20 +40,20 @@ export const Footer: React.FC = () => {
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 text-xs bg-white/10 border border-white/20 rounded-[8px] text-white placeholder-white/50 focus:outline-none focus:border-[#C5A880]"
+                  className="w-full px-4 py-3 text-xs bg-white/10 border border-white/20 rounded-[8px] text-white placeholder-white/50 focus:outline-none focus:border-[#daaf37]"
                 />
                 <button
                   type="submit"
-                  className="px-5 py-3 bg-[#C5A880] hover:bg-[#D4AF37] text-[#1C1A18] text-xs font-semibold rounded-[8px] transition-colors shrink-0 cursor-pointer flex items-center gap-1.5"
+                  className="px-5 py-3 bg-[#daaf37] hover:bg-[#b88e22] text-[#222222] text-xs font-semibold rounded-[8px] transition-colors shrink-0 cursor-pointer flex items-center gap-1.5"
                 >
                   <span>Subscribe</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </form>
             ) : (
-              <div className="p-3 bg-[#C5A880]/20 border border-[#C5A880] rounded-[8px] text-xs text-[#FAF7F2] flex items-center gap-2 justify-center">
-                <Check className="w-4 h-4 text-[#C5A880]" />
-                <span>Welcome! Use code <strong className="text-[#C5A880]">WELCOMEHUG10</strong> for 10% off your first gift.</span>
+              <div className="p-3 bg-[#daaf37]/20 border border-[#daaf37] rounded-[8px] text-xs text-[#FAF7F2] flex items-center gap-2 justify-center">
+                <Check className="w-4 h-4 text-[#daaf37]" />
+                <span>Welcome! Use code <strong className="text-[#daaf37]">WELCOMEHUG10</strong> for 10% off your first gift.</span>
               </div>
             )}
           </div>
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
             <span className="font-serif-luxury text-3xl text-[#FAF7F2] tracking-tight font-medium">
               Marvel Me
             </span>
-            <p className="text-sm font-serif-luxury text-[#C5A880] italic">
+            <p className="text-sm font-serif-luxury text-[#daaf37] italic">
               “Gifts that feel like a hug.”
             </p>
             <p className="text-xs text-[#A8A29E] leading-relaxed max-w-sm">
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
 
           {/* Curations Column */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-semibold uppercase tracking-widest text-[#C5A880] text-[11px]">
+            <h4 className="font-semibold uppercase tracking-widest text-[#daaf37] text-[11px]">
               Gift Curations
             </h4>
             <ul className="space-y-2 text-[#D1C9BC]">
@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
 
           {/* Bespoke Services */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-semibold uppercase tracking-widest text-[#C5A880] text-[11px]">
+            <h4 className="font-semibold uppercase tracking-widest text-[#daaf37] text-[11px]">
               Bespoke Services
             </h4>
             <ul className="space-y-2 text-[#D1C9BC]">
@@ -199,7 +199,7 @@ export const Footer: React.FC = () => {
 
           {/* About & Trust */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-semibold uppercase tracking-widest text-[#C5A880] text-[11px]">
+            <h4 className="font-semibold uppercase tracking-widest text-[#daaf37] text-[11px]">
               Our Atelier
             </h4>
             <ul className="space-y-2 text-[#D1C9BC]">

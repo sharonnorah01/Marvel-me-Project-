@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { QUIZ_QUESTIONS, PRODUCTS, Product, GIFT_WRAPPING_OPTIONS } from '../data/products';
 import { useCart } from '../context/CartContext';
 import { X, Sparkles, ArrowRight, ArrowLeft, Check, Heart, RotateCcw } from 'lucide-react';
+import { handleImageFallback } from '../utils/images';
 
 export const GiftRecommendationQuizModal: React.FC = () => {
   const { isQuizOpen, setIsQuizOpen, setActiveProductDetail, addToCart } = useCart();
@@ -81,13 +82,13 @@ export const GiftRecommendationQuizModal: React.FC = () => {
   const recommendations = getRecommendedProducts();
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-[#222222]/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
       <div className="relative bg-[#FAF7F2] text-[#2D2A26] w-full max-w-2xl rounded-[8px] shadow-2xl border border-[#D9D2C7] overflow-hidden flex flex-col">
         
         {/* Header */}
-        <div className="bg-[#1C1A18] text-[#FAF7F2] px-6 py-4 flex items-center justify-between border-b border-[#C5A880]/30">
+        <div className="bg-[#222222] text-[#FAF7F2] px-6 py-4 flex items-center justify-between border-b border-[#daaf37]/30">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#C5A880]" />
+            <Sparkles className="w-4 h-4 text-[#daaf37]" />
             <span className="font-serif-luxury text-xl font-medium tracking-wide">
               Marvel Me Gift Stylist Quiz
             </span>
@@ -106,7 +107,7 @@ export const GiftRecommendationQuizModal: React.FC = () => {
         {!isCompleted && (
           <div className="bg-[#EAE4D8] h-1.5 w-full">
             <div
-              className="bg-[#A58457] h-full transition-all duration-300"
+              className="bg-[#daaf37] h-full transition-all duration-300"
               style={{ width: `${((currentStepIndex + 1) / QUIZ_QUESTIONS.length) * 100}%` }}
             />
           </div>
@@ -119,10 +120,10 @@ export const GiftRecommendationQuizModal: React.FC = () => {
               
               {/* Question Headline */}
               <div className="text-center space-y-1">
-                <span className="text-[11px] uppercase tracking-widest text-[#8C6D3B] font-semibold">
+                <span className="text-[11px] uppercase tracking-widest text-[#daaf37] font-semibold">
                   Step {currentStepIndex + 1} of {QUIZ_QUESTIONS.length}
                 </span>
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#222222] font-medium">
                   {currentQuestion.title}
                 </h3>
                 <p className="text-xs text-[#7A746B] italic">
@@ -141,15 +142,15 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                       onClick={() => handleSelectOption(currentQuestion.id, opt.value)}
                       className={`w-full p-4 text-left rounded-[8px] border transition-all cursor-pointer flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#1C1A18] text-[#FAF7F2] border-[#1C1A18] shadow-md'
-                          : 'bg-white text-[#2D2A26] border-[#E2DBD0] hover:border-[#C5A880] hover:bg-[#FDFBF7]'
+                          ? 'bg-[#222222] text-[#FAF7F2] border-[#222222] shadow-md ring-1 ring-[#daaf37]'
+                          : 'bg-white text-[#2D2A26] border-[#E2DBD0] hover:border-[#daaf37] hover:bg-[#FDFBF7]'
                       }`}
                     >
                       <div className="space-y-0.5">
-                        <p className={`text-sm font-semibold ${isSelected ? 'text-[#FAF7F2]' : 'text-[#1C1A18]'}`}>
+                        <p className={`text-sm font-semibold ${isSelected ? 'text-[#FAF7F2]' : 'text-[#222222]'}`}>
                           {opt.label}
                         </p>
-                        <p className={`text-xs ${isSelected ? 'text-[#C5A880]' : 'text-[#66615B]'}`}>
+                        <p className={`text-xs ${isSelected ? 'text-[#daaf37]' : 'text-[#66615B]'}`}>
                           {opt.description}
                         </p>
                       </div>
@@ -157,7 +158,7 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                       <div
                         className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ml-3 ${
                           isSelected
-                            ? 'border-[#C5A880] bg-[#C5A880] text-[#1C1A18]'
+                            ? 'border-[#daaf37] bg-[#daaf37] text-[#222222]'
                             : 'border-[#D9D2C7] bg-white'
                         }`}
                       >
@@ -175,7 +176,7 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                   onClick={handleBack}
                   disabled={currentStepIndex === 0}
                   className={`text-xs flex items-center gap-1 font-medium cursor-pointer ${
-                    currentStepIndex === 0 ? 'opacity-30 cursor-not-allowed text-[#8C8479]' : 'text-[#5C574F] hover:text-[#1C1A18]'
+                    currentStepIndex === 0 ? 'opacity-30 cursor-not-allowed text-[#8C8479]' : 'text-[#5C574F] hover:text-[#222222]'
                   }`}
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
@@ -193,11 +194,11 @@ export const GiftRecommendationQuizModal: React.FC = () => {
             <div className="space-y-6 text-center animate-in fade-in duration-300">
               
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF7F2] border border-[#C5A880] rounded-[8px] text-xs font-semibold text-[#8C6D3B]">
-                  <Sparkles className="w-3.5 h-3.5 text-[#A58457]" />
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF7F2] border border-[#daaf37] rounded-[8px] text-xs font-semibold text-[#222222]">
+                  <Sparkles className="w-3.5 h-3.5 text-[#daaf37]" />
                   <span>Curated Just For You</span>
                 </div>
-                <h3 className="font-serif-luxury text-3xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-3xl text-[#222222] font-medium">
                   Gifts That Truly Feel Like A Hug
                 </h3>
                 <p className="text-xs text-[#524E48] max-w-md mx-auto">
@@ -210,31 +211,26 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                 {recommendations.map(({ product, matchScore, reason }, idx) => (
                   <div
                     key={product.id}
-                    className="p-4 bg-white rounded-[8px] border border-[#E2DBD0] hover:border-[#C5A880] transition-all shadow-sm flex flex-col sm:flex-row items-center gap-4"
+                    className="p-4 bg-white rounded-[8px] border border-[#E2DBD0] hover:border-[#daaf37] transition-all shadow-sm flex flex-col sm:flex-row items-center gap-4"
                   >
                     <img
                       src={product.images[0]}
-                      onError={(e) => {
-                        const target = e.currentTarget;
-                        if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
-                          target.src = '/images/hero_luxury_gift_box.jpg';
-                        }
-                      }}
+                      onError={(e) => handleImageFallback(e, product.category)}
                       alt={product.name}
                       className="w-full sm:w-28 h-28 object-cover rounded-[8px] border border-[#E8E2D8] shrink-0"
                     />
 
                     <div className="flex-1 space-y-1 w-full">
                       <div className="flex items-center justify-between">
-                        <span className="text-[11px] uppercase tracking-wider text-[#A58457] font-semibold">
+                        <span className="text-[11px] uppercase tracking-wider text-[#daaf37] font-semibold">
                           {idx === 0 ? '✦ Primary Match' : 'Secondary Match'}
                         </span>
-                        <span className="text-xs font-bold text-[#1C1A18] bg-[#FAF7F2] border border-[#C5A880]/40 px-2 py-0.5 rounded-[6px] tabular-nums">
+                        <span className="text-xs font-bold text-[#222222] bg-[#FAF7F2] border border-[#daaf37]/50 px-2 py-0.5 rounded-[6px] tabular-nums">
                           {matchScore}% Match
                         </span>
                       </div>
 
-                      <h4 className="font-serif-luxury text-lg text-[#1C1A18] font-medium">
+                      <h4 className="font-serif-luxury text-lg text-[#222222] font-medium">
                         {product.name}
                       </h4>
 
@@ -243,7 +239,7 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                       </p>
 
                       <div className="pt-2 flex items-center justify-between">
-                        <span className="text-sm font-bold text-[#1C1A18] tabular-nums">
+                        <span className="text-sm font-bold text-[#222222] tabular-nums">
                           ${product.price}
                         </span>
 
@@ -254,7 +250,7 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                               setIsQuizOpen(false);
                               setActiveProductDetail(product);
                             }}
-                            className="px-3 py-1.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-medium rounded-[8px] transition-colors cursor-pointer"
+                            className="px-3 py-1.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
                           >
                             Personalize & View
                           </button>
@@ -270,9 +266,9 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="text-xs text-[#66615B] hover:text-[#1C1A18] flex items-center gap-1.5 cursor-pointer"
+                  className="text-xs text-[#66615B] hover:text-[#222222] flex items-center gap-1.5 cursor-pointer"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw className="w-3.5 h-3.5 text-[#daaf37]" />
                   <span>Retake Stylist Quiz</span>
                 </button>
               </div>

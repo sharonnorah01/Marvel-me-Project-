@@ -37,7 +37,7 @@ export const CategoryNavigation: React.FC = () => {
         
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="font-serif-luxury text-2xl text-[#1C1A18] font-medium">
+            <h2 className="font-serif-luxury text-2xl text-[#222222] font-medium">
               Curated Gift Categories
             </h2>
             <p className="text-xs text-[#7A746B] mt-0.5">
@@ -48,7 +48,7 @@ export const CategoryNavigation: React.FC = () => {
           <button
             onClick={() => handleSelect('All')}
             className={`text-xs font-medium cursor-pointer ${
-              selectedCategoryFilter === 'All' ? 'text-[#A58457] underline' : 'text-[#5C574F] hover:text-[#1C1A18]'
+              selectedCategoryFilter === 'All' ? 'text-[#daaf37] font-bold underline' : 'text-[#5C574F] hover:text-[#222222]'
             }`}
           >
             View All ({PRODUCTS_COUNT})
@@ -67,19 +67,19 @@ export const CategoryNavigation: React.FC = () => {
                 onClick={() => handleSelect(cat.id)}
                 className={`flex flex-col items-center justify-center p-3 rounded-[8px] text-center transition-all cursor-pointer border ${
                   isSelected
-                    ? 'bg-[#1C1A18] text-[#FAF7F2] border-[#1C1A18] shadow-sm'
-                    : 'bg-white text-[#2D2A26] border-[#E2DBD0] hover:border-[#C5A880] hover:bg-[#FDFBF7]'
+                    ? 'bg-[#222222] text-[#FAF7F2] border-[#222222] shadow-sm ring-1 ring-[#daaf37]'
+                    : 'bg-white text-[#2D2A26] border-[#E2DBD0] hover:border-[#daaf37] hover:bg-[#FDFBF7]'
                 }`}
               >
                 <div
                   className={`p-2 rounded-[8px] mb-1.5 transition-colors ${
-                    isSelected ? 'bg-white/10 text-[#C5A880]' : 'bg-[#FAF7F2] text-[#8C6D3B]'
+                    isSelected ? 'bg-white/10 text-[#daaf37]' : 'bg-[#FAF7F2] text-[#b88e22]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-semibold leading-tight line-clamp-1">{cat.name}</span>
-                <span className={`text-[10px] mt-0.5 ${isSelected ? 'text-[#C5A880]' : 'text-[#8C8479]'}`}>
+                <span className={`text-[10px] mt-0.5 ${isSelected ? 'text-[#daaf37]' : 'text-[#8C8479]'}`}>
                   {cat.id === 'All' ? '8 items' : `${cat.count} curated`}
                 </span>
               </button>

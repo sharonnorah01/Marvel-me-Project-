@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from '../context/CartContext';
 import { Heart, Sparkles, Ribbon, ShieldCheck, ArrowRight, Award, Compass, Users } from 'lucide-react';
 import { productGiftWrapping } from '../assets/images';
+import { handleImageFallback } from '../utils/images';
 
 export const AboutView: React.FC = () => {
   const { setCurrentView, setIsQuizOpen, setIsConsultationOpen } = useCart();
@@ -12,13 +13,13 @@ export const AboutView: React.FC = () => {
       {/* Brand Hero Story */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#8C6D3B] font-semibold">
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#d9a300] font-semibold">
             <span>Our Origin & Creed</span>
             <span aria-hidden="true">·</span>
             <span>Artisanal Luxury</span>
           </div>
 
-          <h1 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#1C1A18] font-medium leading-tight text-balance">
+          <h1 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#222222] font-medium leading-tight text-balance">
             We believe gifting should feel like a genuine, heartfelt hug.
           </h1>
 
@@ -34,15 +35,15 @@ export const AboutView: React.FC = () => {
           <div className="pt-2 flex items-center gap-4">
             <button
               onClick={() => setCurrentView('shop')}
-              className="px-6 py-3.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
+              className="px-6 py-3.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
             >
               <span>Explore Our Curations</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#daaf37]" />
             </button>
 
             <button
               onClick={() => setIsConsultationOpen(true)}
-              className="px-6 py-3.5 bg-white border border-[#D9D2C7] text-[#2D2A26] hover:border-[#A58457] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
+              className="px-6 py-3.5 bg-white border border-[#D9D2C7] text-[#2D2A26] hover:border-[#daaf37] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
             >
               <span>Meet a Gifting Stylist</span>
             </button>
@@ -54,17 +55,12 @@ export const AboutView: React.FC = () => {
           <div className="rounded-[8px] overflow-hidden border border-[#D9D2C7] bg-white shadow-xl relative">
             <img
               src={productGiftWrapping}
-              onError={(e) => {
-                const target = e.currentTarget;
-                if (!target.src.includes('/images/product_gift_wrapping.jpg')) {
-                  target.src = '/images/product_gift_wrapping.jpg';
-                }
-              }}
+              onError={(e) => handleImageFallback(e, 'wrapping')}
               alt="Marvel Me gift wrapping craftsmanship"
               className="w-full h-[440px] object-cover"
             />
             <div className="p-5 bg-white/95 backdrop-blur-md border-t border-[#E8E2D8] space-y-1">
-              <span className="text-[11px] uppercase tracking-widest text-[#8C6D3B] font-semibold">
+              <span className="text-[11px] uppercase tracking-widest text-[#d9a300] font-semibold">
                 The Atelier Workshop
               </span>
               <p className="text-xs text-[#4A4641] italic">
@@ -78,10 +74,10 @@ export const AboutView: React.FC = () => {
       {/* The 4 Principles of Marvel Me Gifting */}
       <section className="bg-white p-8 sm:p-12 lg:p-16 rounded-[8px] border border-[#E2DBD0] space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs uppercase tracking-widest text-[#8C6D3B] font-semibold">
+          <span className="text-xs uppercase tracking-widest text-[#d9a300] font-semibold">
             Uncompromising Standards
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-4xl text-[#1C1A18] font-medium">
+          <h2 className="font-serif-luxury text-3xl sm:text-4xl text-[#222222] font-medium">
             The Marvel Me Integrity Pledge
           </h2>
           <p className="text-xs sm:text-sm text-[#66615B]">
@@ -91,10 +87,10 @@ export const AboutView: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-5 rounded-[8px] bg-[#FAF7F2] border border-[#EAE4D8] space-y-3">
-            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#8C6D3B]">
+            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#daaf37]">
               <Ribbon className="w-5 h-5" />
             </div>
-            <h3 className="font-serif-luxury text-xl text-[#1C1A18] font-medium">
+            <h3 className="font-serif-luxury text-xl text-[#222222] font-medium">
               1. The Ritual of Unwrapping
             </h3>
             <p className="text-xs text-[#524E48] leading-relaxed">
@@ -103,10 +99,10 @@ export const AboutView: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-[8px] bg-[#FAF7F2] border border-[#EAE4D8] space-y-3">
-            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#8C6D3B]">
+            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#daaf37]">
               <Sparkles className="w-5 h-5" />
             </div>
-            <h3 className="font-serif-luxury text-xl text-[#1C1A18] font-medium">
+            <h3 className="font-serif-luxury text-xl text-[#222222] font-medium">
               2. Small-Batch Artisans Only
             </h3>
             <p className="text-xs text-[#524E48] leading-relaxed">
@@ -115,10 +111,10 @@ export const AboutView: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-[8px] bg-[#FAF7F2] border border-[#EAE4D8] space-y-3">
-            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#8C6D3B]">
+            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#daaf37]">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h3 className="font-serif-luxury text-xl text-[#1C1A18] font-medium">
+            <h3 className="font-serif-luxury text-xl text-[#222222] font-medium">
               3. Pen Over Print
             </h3>
             <p className="text-xs text-[#524E48] leading-relaxed">
@@ -127,10 +123,10 @@ export const AboutView: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-[8px] bg-[#FAF7F2] border border-[#EAE4D8] space-y-3">
-            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#8C6D3B]">
+            <div className="w-10 h-10 rounded-[6px] bg-white border border-[#D9D2C7] flex items-center justify-center text-[#daaf37]">
               <Compass className="w-5 h-5" />
             </div>
-            <h3 className="font-serif-luxury text-xl text-[#1C1A18] font-medium">
+            <h3 className="font-serif-luxury text-xl text-[#222222] font-medium">
               4. Milestone Timing
             </h3>
             <p className="text-xs text-[#524E48] leading-relaxed">
@@ -141,9 +137,9 @@ export const AboutView: React.FC = () => {
       </section>
 
       {/* Corporate & Bespoke Concierge Spotlight */}
-      <section className="bg-[#1C1A18] text-[#FAF7F2] rounded-[8px] p-8 sm:p-12 lg:p-16 border border-[#C5A880]/30 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <section className="bg-[#222222] text-[#FAF7F2] rounded-[8px] p-8 sm:p-12 lg:p-16 border border-[#daaf37]/30 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-8 space-y-4">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A880] font-semibold">
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#daaf37] font-semibold">
             <Award className="w-4 h-4" />
             <span>Corporate & Executive Concierge</span>
           </div>
@@ -156,7 +152,7 @@ export const AboutView: React.FC = () => {
           <div className="pt-2 flex items-center gap-3">
             <button
               onClick={() => setIsConsultationOpen(true)}
-              className="px-6 py-3 bg-[#C5A880] text-[#1C1A18] hover:bg-[#D4AF37] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer shadow-sm"
+              className="px-6 py-3 bg-[#daaf37] text-[#222222] hover:bg-[#b88e22] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer shadow-sm"
             >
               Book Corporate Gifting Stylist
             </button>
@@ -170,7 +166,7 @@ export const AboutView: React.FC = () => {
         </div>
 
         <div className="lg:col-span-4 p-6 bg-white/5 backdrop-blur-md rounded-[8px] border border-white/10 space-y-3 text-xs">
-          <div className="font-serif-luxury text-lg text-[#C5A880]">Corporate Capabilities</div>
+          <div className="font-serif-luxury text-lg text-[#daaf37]">Corporate Capabilities</div>
           <ul className="space-y-2 text-[#D1C9BC]">
             <li>✦ Multi-destination global delivery coordination</li>
             <li>✦ Custom Pantone silk ribbon matching</li>

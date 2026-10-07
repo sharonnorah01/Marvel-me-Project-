@@ -32,13 +32,13 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Editorial Announcement Bar */}
-      <div className="bg-[#1C1A18] text-[#FAF7F2] text-xs py-2 px-4 text-center tracking-wider border-b border-[#C5A880]/20 flex items-center justify-center gap-3">
-        <span className="text-[#C5A880]">✦</span>
+      <div className="bg-[#222222] text-[#FAF7F2] text-xs py-2 px-4 text-center tracking-wider border-b border-[#daaf37]/20 flex items-center justify-center gap-3">
+        <span className="text-[#daaf37]">✦</span>
         <span>Complimentary Handwritten Calligraphy & Guaranteed Milestone Delivery on All Hampers</span>
-        <span className="hidden md:inline text-[#C5A880]">✦</span>
+        <span className="hidden md:inline text-[#daaf37]">✦</span>
         <button
           onClick={() => setIsQuizOpen(true)}
-          className="hidden sm:inline-flex items-center gap-1 underline underline-offset-2 text-[#E5D5B8] hover:text-white transition-colors cursor-pointer"
+          className="hidden sm:inline-flex items-center gap-1 underline underline-offset-2 text-[#f3de8a] hover:text-white transition-colors cursor-pointer"
         >
           Find Your Gift Match →
         </button>
@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
             className="group text-left cursor-pointer focus:outline-none"
             aria-label="Marvel Me Home"
           >
-            <span className="font-serif-luxury text-3xl sm:text-4xl tracking-tight text-[#1C1A18] font-medium group-hover:text-[#A58457] transition-colors">
+            <span className="font-serif-luxury text-3xl sm:text-4xl tracking-tight text-[#222222] font-medium group-hover:text-[#daaf37] transition-colors">
               Marvel Me
             </span>
           </button>
@@ -63,58 +63,58 @@ export const Navbar: React.FC = () => {
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-[#3D3A36]">
             <button
               onClick={() => handleNavClick('home')}
-              className={`hover:text-[#A58457] transition-colors cursor-pointer py-1 relative ${
-                currentView === 'home' ? 'text-[#1C1A18] font-semibold' : ''
+              className={`hover:text-[#daaf37] transition-colors cursor-pointer py-1 relative ${
+                currentView === 'home' ? 'text-[#222222] font-semibold' : ''
               }`}
             >
               Home
               {currentView === 'home' && (
-                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#A58457]" />
+                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#daaf37]" />
               )}
             </button>
 
             <button
               onClick={() => handleNavClick('shop', 'All')}
-              className={`hover:text-[#A58457] transition-colors cursor-pointer py-1 relative ${
-                currentView === 'shop' ? 'text-[#1C1A18] font-semibold' : ''
+              className={`hover:text-[#daaf37] transition-colors cursor-pointer py-1 relative ${
+                currentView === 'shop' ? 'text-[#222222] font-semibold' : ''
               }`}
             >
               Shop
               {currentView === 'shop' && (
-                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#A58457]" />
+                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#daaf37]" />
               )}
             </button>
 
             <button
               onClick={() => handleNavClick('shop', 'Gift Hampers')}
-              className="hover:text-[#A58457] transition-colors cursor-pointer py-1"
+              className="hover:text-[#daaf37] transition-colors cursor-pointer py-1"
             >
               Gift Hampers
             </button>
 
             <button
               onClick={() => handleNavClick('shop', 'Picnics')}
-              className="hover:text-[#A58457] transition-colors cursor-pointer py-1"
+              className="hover:text-[#daaf37] transition-colors cursor-pointer py-1"
             >
               Picnics
             </button>
 
             <button
               onClick={() => handleNavClick('shop', 'Gift Wrapping')}
-              className="hover:text-[#A58457] transition-colors cursor-pointer py-1"
+              className="hover:text-[#daaf37] transition-colors cursor-pointer py-1"
             >
               Gift Wrapping
             </button>
 
             <button
               onClick={() => handleNavClick('about')}
-              className={`hover:text-[#A58457] transition-colors cursor-pointer py-1 relative ${
-                currentView === 'about' ? 'text-[#1C1A18] font-semibold' : ''
+              className={`hover:text-[#daaf37] transition-colors cursor-pointer py-1 relative ${
+                currentView === 'about' ? 'text-[#222222] font-semibold' : ''
               }`}
             >
               Our Story
               {currentView === 'about' && (
-                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#A58457]" />
+                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#daaf37]" />
               )}
             </button>
           </nav>
@@ -142,7 +142,7 @@ export const Navbar: React.FC = () => {
                       setShowSearchInput(false);
                       setSearchQuery('');
                     }}
-                    className="text-[#8C8479] hover:text-[#1C1A18] ml-1"
+                    className="text-[#8C8479] hover:text-[#222222] ml-1"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => setShowSearchInput(true)}
                   aria-label="Search collection"
-                  className="p-2 text-[#3D3A36] hover:text-[#A58457] transition-colors rounded-[8px] hover:bg-[#F2ECE1] cursor-pointer"
+                  className="p-2 text-[#3D3A36] hover:text-[#daaf37] transition-colors rounded-[8px] hover:bg-[#F2ECE1] cursor-pointer"
                 >
                   <Search className="w-5 h-5" />
                 </button>
@@ -161,18 +161,18 @@ export const Navbar: React.FC = () => {
             {/* Gift Quiz Action */}
             <button
               onClick={() => setIsQuizOpen(true)}
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-[#2D2A26] border border-[#D9D2C7] rounded-[8px] hover:border-[#A58457] hover:bg-[#F4EFEA] transition-colors cursor-pointer whitespace-nowrap"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-[#2D2A26] border border-[#D9D2C7] rounded-[8px] hover:border-[#daaf37] hover:bg-[#F4EFEA] transition-colors cursor-pointer whitespace-nowrap"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#A58457]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#daaf37]" />
               <span>Gift Quiz</span>
             </button>
 
             {/* Book Consultation */}
             <button
               onClick={() => setIsConsultationOpen(true)}
-              className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#FAF7F2] bg-[#1C1A18] hover:bg-[#33302C] rounded-[8px] transition-colors cursor-pointer shadow-sm whitespace-nowrap"
+              className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#FAF7F2] bg-[#222222] hover:bg-[#333333] rounded-[8px] transition-colors cursor-pointer shadow-sm whitespace-nowrap"
             >
-              <Calendar className="w-3.5 h-3.5 text-[#C5A880]" />
+              <Calendar className="w-3.5 h-3.5 text-[#daaf37]" />
               <span>Consultation</span>
             </button>
 
@@ -180,11 +180,11 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setIsCartOpen(true)}
               aria-label={`View shopping bag with ${cartCount} items`}
-              className="relative p-2 text-[#1C1A18] hover:text-[#A58457] transition-colors rounded-[8px] hover:bg-[#F2ECE1] cursor-pointer"
+              className="relative p-2 text-[#222222] hover:text-[#daaf37] transition-colors rounded-[8px] hover:bg-[#F2ECE1] cursor-pointer"
             >
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#A58457] text-[#FAF7F2] text-[11px] font-semibold h-4 min-w-4 px-1 rounded-full flex items-center justify-center tabular-nums shadow-sm">
+                <span className="absolute -top-1 -right-1 bg-[#222222] text-[#daaf37] text-[11px] font-bold h-4 min-w-4 px-1 rounded-full flex items-center justify-center tabular-nums shadow-sm border border-[#daaf37]">
                   {cartCount}
                 </span>
               )}
@@ -194,7 +194,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
-              className="lg:hidden p-2 text-[#1C1A18] hover:text-[#A58457] rounded-[8px] hover:bg-[#F2ECE1]"
+              className="lg:hidden p-2 text-[#222222] hover:text-[#daaf37] rounded-[8px] hover:bg-[#F2ECE1]"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -212,7 +212,7 @@ export const Navbar: React.FC = () => {
                 }}
                 className="flex items-center justify-center gap-2 p-2.5 bg-white border border-[#D9D2C7] rounded-[8px] text-xs font-medium text-[#2D2A26]"
               >
-                <Sparkles className="w-4 h-4 text-[#A58457]" />
+                <Sparkles className="w-4 h-4 text-[#daaf37]" />
                 Gift Quiz
               </button>
               <button
@@ -220,9 +220,9 @@ export const Navbar: React.FC = () => {
                   setIsConsultationOpen(true);
                   setMobileMenuOpen(false);
                 }}
-                className="flex items-center justify-center gap-2 p-2.5 bg-[#1C1A18] text-[#FAF7F2] rounded-[8px] text-xs font-medium"
+                className="flex items-center justify-center gap-2 p-2.5 bg-[#222222] text-[#FAF7F2] rounded-[8px] text-xs font-medium"
               >
-                <Calendar className="w-4 h-4 text-[#C5A880]" />
+                <Calendar className="w-4 h-4 text-[#daaf37]" />
                 Consultation
               </button>
             </div>
@@ -230,49 +230,49 @@ export const Navbar: React.FC = () => {
             <div className="flex flex-col space-y-3 text-base">
               <button
                 onClick={() => handleNavClick('home')}
-                className="text-left font-serif-luxury text-xl py-1 text-[#1C1A18] hover:text-[#A58457]"
+                className="text-left font-serif-luxury text-xl py-1 text-[#222222] hover:text-[#daaf37]"
               >
                 Home
               </button>
               <button
                 onClick={() => handleNavClick('shop', 'All')}
-                className="text-left font-serif-luxury text-xl py-1 text-[#1C1A18] hover:text-[#A58457]"
+                className="text-left font-serif-luxury text-xl py-1 text-[#222222] hover:text-[#daaf37]"
               >
                 Explore Full Shop
               </button>
               <button
                 onClick={() => handleNavClick('shop', 'Gift Hampers')}
-                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#A58457]"
+                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#daaf37]"
               >
                 Gift Hampers
               </button>
               <button
                 onClick={() => handleNavClick('shop', 'Picnics')}
-                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#A58457]"
+                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#daaf37]"
               >
                 Picnic Experiences
               </button>
               <button
                 onClick={() => handleNavClick('shop', 'Gift Wrapping')}
-                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#A58457]"
+                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#daaf37]"
               >
                 Artisanal Gift Wrapping
               </button>
               <button
                 onClick={() => handleNavClick('shop', 'Gift Surprises')}
-                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#A58457]"
+                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#daaf37]"
               >
                 Gift Surprises
               </button>
               <button
                 onClick={() => handleNavClick('shop', 'Corporate Gifting')}
-                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#A58457]"
+                className="text-left py-1 text-sm text-[#4A4641] hover:text-[#daaf37]"
               >
                 Corporate Gifting
               </button>
               <button
                 onClick={() => handleNavClick('about')}
-                className="text-left font-serif-luxury text-xl py-1 text-[#1C1A18] hover:text-[#A58457]"
+                className="text-left font-serif-luxury text-xl py-1 text-[#222222] hover:text-[#daaf37]"
               >
                 Our Story & Philosophy
               </button>

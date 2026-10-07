@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from '../context/CartContext';
 import { ArrowRight, Sparkles, ShieldCheck, HeartHandshake, CalendarCheck } from 'lucide-react';
 import { heroLuxuryGiftBox } from '../assets/images';
+import { handleImageFallback } from '../utils/images';
 
 export const Hero: React.FC = () => {
   const { setCurrentView, setSelectedCategoryFilter, setIsQuizOpen, setIsConsultationOpen } = useCart();
@@ -17,14 +18,14 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-6 space-y-6 text-left">
             
             {/* Subtle editorial kicker */}
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#8C6D3B] font-medium">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#b88e22] font-semibold">
               <span>Handcrafted Luxury Gifting</span>
               <span aria-hidden="true">·</span>
               <span>Bespoke Keepsakes</span>
             </div>
 
             {/* Slogan - Headline: Marvel Me's slogan 'Gifts that feel like a hug' */}
-            <h1 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#1C1A18] leading-[1.08] tracking-tight text-balance">
+            <h1 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#222222] leading-[1.08] tracking-tight text-balance">
               Gifts that feel like a hug.
             </h1>
 
@@ -40,17 +41,17 @@ export const Hero: React.FC = () => {
                   setCurrentView('shop');
                   setSelectedCategoryFilter('All');
                 }}
-                className="px-6 py-3.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-sm font-medium rounded-[8px] transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-sm"
+                className="px-6 py-3.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-sm font-medium rounded-[8px] transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-sm"
               >
                 <span>Explore Curated Gifts</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#C5A880]" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#daaf37]" />
               </button>
 
               <button
                 onClick={() => setIsQuizOpen(true)}
-                className="px-6 py-3.5 bg-white text-[#2D2A26] border border-[#D9D2C7] hover:border-[#A58457] hover:bg-[#F9F6F0] text-sm font-medium rounded-[8px] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                className="px-6 py-3.5 bg-white text-[#2D2A26] border border-[#D9D2C7] hover:border-[#daaf37] hover:bg-[#F9F6F0] text-sm font-medium rounded-[8px] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
-                <Sparkles className="w-4 h-4 text-[#A58457]" />
+                <Sparkles className="w-4 h-4 text-[#daaf37]" />
                 <span>Gift Recommendation Quiz</span>
               </button>
             </div>
@@ -58,25 +59,25 @@ export const Hero: React.FC = () => {
             {/* Trust and reassurance row */}
             <div className="pt-6 border-t border-[#E8E2D8] grid grid-cols-3 gap-4 text-xs text-[#5C574F]">
               <div className="flex items-start gap-2">
-                <HeartHandshake className="w-4 h-4 text-[#A58457] shrink-0 mt-0.5" />
+                <HeartHandshake className="w-4 h-4 text-[#daaf37] shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-[#1C1A18]">Artisan Keepsakes</p>
+                  <p className="font-medium text-[#222222]">Artisan Keepsakes</p>
                   <p className="text-[11px] text-[#7A746B]">Reusable linen & wood chests</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#A58457] shrink-0 mt-0.5" />
+                <ShieldCheck className="w-4 h-4 text-[#daaf37] shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-[#1C1A18]">Handwritten Note</p>
+                  <p className="font-medium text-[#222222]">Handwritten Note</p>
                   <p className="text-[11px] text-[#7A746B]">Complimentary calligraphy card</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
-                <CalendarCheck className="w-4 h-4 text-[#A58457] shrink-0 mt-0.5" />
+                <CalendarCheck className="w-4 h-4 text-[#daaf37] shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-[#1C1A18]">Date Scheduling</p>
+                  <p className="font-medium text-[#222222]">Date Scheduling</p>
                   <p className="text-[11px] text-[#7A746B]">Arrives exactly on the day</p>
                 </div>
               </div>
@@ -92,34 +93,29 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-[8px] overflow-hidden border border-[#D9D2C7] bg-white shadow-xl">
                 <img
                   src={heroLuxuryGiftBox}
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (!target.src.includes('/images/hero_luxury_gift_box.jpg')) {
-                      target.src = '/images/hero_luxury_gift_box.jpg';
-                    }
-                  }}
+                  onError={(e) => handleImageFallback(e, 'hero')}
                   alt="Marvel Me luxury bespoke gift box wrapped with gold ribbon"
                   referrerPolicy="no-referrer"
                   className="w-full h-[360px] sm:h-[460px] object-cover object-center transform hover:scale-[1.01] transition-transform duration-700"
                 />
 
                 {/* Subtle luxury overlay card at bottom right */}
-                <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-xs bg-[#FAF7F2]/95 backdrop-blur-md p-4 rounded-[8px] border border-[#C5A880]/30 shadow-lg">
+                <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-xs bg-[#FAF7F2]/95 backdrop-blur-md p-4 rounded-[8px] border border-[#daaf37]/40 shadow-lg">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[#C5A880]">★★★★★</span>
-                    <span className="text-xs font-semibold text-[#1C1A18] tabular-nums">4.98 / 5.0</span>
+                    <span className="text-[#daaf37]">★★★★★</span>
+                    <span className="text-xs font-semibold text-[#222222] tabular-nums">4.98 / 5.0</span>
                   </div>
                   <p className="text-xs text-[#4A4641] leading-relaxed italic">
                     “The box opened like a dream. You can physically feel the care in every fold of ribbon.”
                   </p>
-                  <div className="mt-2 text-[11px] text-[#8C6D3B] font-medium flex items-center justify-between">
+                  <div className="mt-2 text-[11px] text-[#b88e22] font-medium flex items-center justify-between">
                     <span>Verified Gift Recipient</span>
                     <button
                       onClick={() => {
                         setCurrentView('shop');
                         setSelectedCategoryFilter('Gift Hampers');
                       }}
-                      className="underline hover:text-[#1C1A18] cursor-pointer"
+                      className="underline hover:text-[#222222] cursor-pointer"
                     >
                       Shop Hampers
                     </button>
@@ -131,7 +127,7 @@ export const Hero: React.FC = () => {
               {/* Decorative Subtle Accent Frame */}
               <div
                 aria-hidden="true"
-                className="hidden sm:block absolute -top-3 -right-3 w-full h-full border border-[#C5A880]/40 rounded-[8px] pointer-events-none -z-10"
+                className="hidden sm:block absolute -top-3 -right-3 w-full h-full border border-[#daaf37]/50 rounded-[8px] pointer-events-none -z-10"
               />
 
             </div>

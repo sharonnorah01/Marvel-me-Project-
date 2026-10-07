@@ -52,16 +52,16 @@ export const CheckoutModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/65 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-[#222222]/70 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
       <div className="relative bg-[#FAF7F2] text-[#2D2A26] w-full max-w-3xl rounded-[8px] shadow-2xl border border-[#D9D2C7] overflow-hidden flex flex-col my-auto">
         
         {/* Top Header */}
-        <div className="bg-[#1C1A18] text-[#FAF7F2] px-6 py-4 flex items-center justify-between border-b border-[#C5A880]/30">
+        <div className="bg-[#222222] text-[#FAF7F2] px-6 py-4 flex items-center justify-between border-b border-[#daaf37]/30">
           <div className="flex items-center gap-3">
             <span className="font-serif-luxury text-2xl font-medium tracking-wide">
               Marvel Me Atelier
             </span>
-            <span className="text-xs text-[#C5A880] border-l border-white/20 pl-3 hidden sm:inline">
+            <span className="text-xs text-[#daaf37] border-l border-white/20 pl-3 hidden sm:inline">
               Seamless Luxury Checkout
             </span>
           </div>
@@ -80,11 +80,11 @@ export const CheckoutModal: React.FC = () => {
           <div className="bg-[#F4EFEA] px-6 py-3 border-b border-[#E8E2D8] flex items-center justify-between text-xs font-medium">
             <div className="flex items-center gap-2">
               <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[11px] ${
-                step === 'details' ? 'bg-[#1C1A18] text-white' : 'bg-[#245D33] text-white'
+                step === 'details' ? 'bg-[#222222] text-white' : 'bg-[#245D33] text-white'
               }`}>
                 {step === 'payment' ? '✓' : '1'}
               </span>
-              <span className={step === 'details' ? 'text-[#1C1A18] font-bold' : 'text-[#7A746B]'}>
+              <span className={step === 'details' ? 'text-[#222222] font-bold' : 'text-[#7A746B]'}>
                 1. Recipient & Milestone Delivery
               </span>
             </div>
@@ -93,11 +93,11 @@ export const CheckoutModal: React.FC = () => {
 
             <div className="flex items-center gap-2">
               <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[11px] ${
-                step === 'payment' ? 'bg-[#1C1A18] text-white' : 'bg-[#D9D2C7] text-[#5C574F]'
+                step === 'payment' ? 'bg-[#222222] text-white' : 'bg-[#D9D2C7] text-[#5C574F]'
               }`}>
                 2
               </span>
-              <span className={step === 'payment' ? 'text-[#1C1A18] font-bold' : 'text-[#7A746B]'}>
+              <span className={step === 'payment' ? 'text-[#222222] font-bold' : 'text-[#7A746B]'}>
                 2. Secure Payment
               </span>
             </div>
@@ -121,7 +121,7 @@ export const CheckoutModal: React.FC = () => {
             <form onSubmit={handleProceedToPayment} className="space-y-6">
               
               <div>
-                <h3 className="font-serif-luxury text-2xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-2xl text-[#222222] font-medium">
                   Where should we send your hug?
                 </h3>
                 <p className="text-xs text-[#7A746B] mt-0.5">
@@ -142,7 +142,7 @@ export const CheckoutModal: React.FC = () => {
                       value={recipientName}
                       onChange={(e) => setRecipientName(e.target.value)}
                       placeholder="e.g. Eleanor Vance"
-                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
 
@@ -156,7 +156,7 @@ export const CheckoutModal: React.FC = () => {
                       value={senderEmail}
                       onChange={(e) => setSenderEmail(e.target.value)}
                       placeholder="e.g. arthur@example.com"
-                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export const CheckoutModal: React.FC = () => {
                       value={streetAddress}
                       onChange={(e) => setStreetAddress(e.target.value)}
                       placeholder="Street name, apartment, suite"
-                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
 
@@ -186,7 +186,7 @@ export const CheckoutModal: React.FC = () => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="+1 (555) 000-0000"
-                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3.5 py-2.5 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export const CheckoutModal: React.FC = () => {
                       required
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
                   <div>
@@ -213,7 +213,7 @@ export const CheckoutModal: React.FC = () => {
                       required
                       value={postalCode}
                       onChange={(e) => setPostalCode(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
                   <div>
@@ -225,7 +225,7 @@ export const CheckoutModal: React.FC = () => {
                       required
                       value={country}
                       onChange={(e) => setCountry(e.target.value)}
-                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457]"
+                      className="w-full px-3 py-2 text-xs bg-white border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37]"
                     />
                   </div>
                 </div>
@@ -236,10 +236,10 @@ export const CheckoutModal: React.FC = () => {
                     type="checkbox"
                     checked={isGiftSurprise}
                     onChange={(e) => setIsGiftSurprise(e.target.checked)}
-                    className="w-4 h-4 text-[#1C1A18] rounded accent-[#1C1A18]"
+                    className="w-4 h-4 text-[#222222] rounded accent-[#222222]"
                   />
                   <div className="text-xs">
-                    <span className="font-semibold text-[#1C1A18]">Maintain Surprise Secrecy</span>
+                    <span className="font-semibold text-[#222222]">Maintain Surprise Secrecy</span>
                     <span className="text-[#7A746B] ml-1">
                       (Courier will not disclose sender until recipient opens their calligraphy envelope)
                     </span>
@@ -251,13 +251,13 @@ export const CheckoutModal: React.FC = () => {
               <div className="p-4 bg-white rounded-[8px] border border-[#E2DBD0] flex items-center justify-between text-xs">
                 <div>
                   <span className="text-[#7A746B]">Selected Curations ({cart.length} items):</span>
-                  <div className="font-medium text-[#1C1A18]">
+                  <div className="font-medium text-[#222222]">
                     {cart.map((c) => c.product.name).join(', ')}
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="text-[#7A746B]">Total</span>
-                  <div className="text-base font-bold text-[#1C1A18] tabular-nums">${subtotal}</div>
+                  <div className="text-base font-bold text-[#222222] tabular-nums">${subtotal}</div>
                 </div>
               </div>
 
@@ -266,7 +266,7 @@ export const CheckoutModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsCheckoutOpen(false)}
-                  className="text-xs text-[#5C574F] hover:text-[#1C1A18] flex items-center gap-1 cursor-pointer"
+                  className="text-xs text-[#5C574F] hover:text-[#222222] flex items-center gap-1 cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Return to Shopping Bag</span>
@@ -274,10 +274,10 @@ export const CheckoutModal: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-md"
+                  className="px-6 py-3 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Continue to Payment</span>
-                  <ArrowRight className="w-4 h-4 text-[#C5A880]" />
+                  <ArrowRight className="w-4 h-4 text-[#daaf37]" />
                 </button>
               </div>
 
@@ -289,7 +289,7 @@ export const CheckoutModal: React.FC = () => {
             <div className="space-y-6">
               
               <div>
-                <h3 className="font-serif-luxury text-2xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-2xl text-[#222222] font-medium">
                   Select Payment Method
                 </h3>
                 <p className="text-xs text-[#7A746B] mt-0.5">
@@ -304,12 +304,12 @@ export const CheckoutModal: React.FC = () => {
                   onClick={() => setPaymentMethod('card')}
                   className={`p-3 rounded-[8px] border text-left cursor-pointer transition-all ${
                     paymentMethod === 'card'
-                      ? 'bg-white border-[#A58457] shadow-sm ring-1 ring-[#A58457]'
-                      : 'bg-white border-[#E2DBD0] hover:border-[#C5A880]'
+                      ? 'bg-white border-[#daaf37] shadow-sm ring-1 ring-[#daaf37]'
+                      : 'bg-white border-[#E2DBD0] hover:border-[#daaf37]'
                   }`}
                 >
-                  <CreditCard className="w-5 h-5 text-[#8C6D3B] mb-1" />
-                  <div className="text-xs font-semibold text-[#1C1A18]">Credit Card</div>
+                  <CreditCard className="w-5 h-5 text-[#b88e22] mb-1" />
+                  <div className="text-xs font-semibold text-[#222222]">Credit Card</div>
                   <div className="text-[10px] text-[#7A746B]">Visa, Master, Amex</div>
                 </button>
 
@@ -318,12 +318,12 @@ export const CheckoutModal: React.FC = () => {
                   onClick={() => setPaymentMethod('apple')}
                   className={`p-3 rounded-[8px] border text-left cursor-pointer transition-all ${
                     paymentMethod === 'apple'
-                      ? 'bg-white border-[#A58457] shadow-sm ring-1 ring-[#A58457]'
-                      : 'bg-white border-[#E2DBD0] hover:border-[#C5A880]'
+                      ? 'bg-white border-[#daaf37] shadow-sm ring-1 ring-[#daaf37]'
+                      : 'bg-white border-[#E2DBD0] hover:border-[#daaf37]'
                   }`}
                 >
-                  <Lock className="w-5 h-5 text-[#1C1A18] mb-1" />
-                  <div className="text-xs font-semibold text-[#1C1A18]">Express Pay</div>
+                  <Lock className="w-5 h-5 text-[#222222] mb-1" />
+                  <div className="text-xs font-semibold text-[#222222]">Express Pay</div>
                   <div className="text-[10px] text-[#7A746B]">Apple Pay / Google Pay</div>
                 </button>
 
@@ -332,12 +332,12 @@ export const CheckoutModal: React.FC = () => {
                   onClick={() => setPaymentMethod('klarna')}
                   className={`p-3 rounded-[8px] border text-left cursor-pointer transition-all ${
                     paymentMethod === 'klarna'
-                      ? 'bg-white border-[#A58457] shadow-sm ring-1 ring-[#A58457]'
-                      : 'bg-white border-[#E2DBD0] hover:border-[#C5A880]'
+                      ? 'bg-white border-[#daaf37] shadow-sm ring-1 ring-[#daaf37]'
+                      : 'bg-white border-[#E2DBD0] hover:border-[#daaf37]'
                   }`}
                 >
-                  <Sparkles className="w-5 h-5 text-[#A58457] mb-1" />
-                  <div className="text-xs font-semibold text-[#1C1A18]">Klarna Pay in 4</div>
+                  <Sparkles className="w-5 h-5 text-[#daaf37] mb-1" />
+                  <div className="text-xs font-semibold text-[#222222]">Klarna Pay in 4</div>
                   <div className="text-[10px] text-[#7A746B]">4 x ${Math.round(subtotal / 4)} 0% APR</div>
                 </button>
               </div>
@@ -345,8 +345,8 @@ export const CheckoutModal: React.FC = () => {
               {/* Credit card inputs simulation */}
               <div className="p-5 bg-white rounded-[8px] border border-[#E2DBD0] space-y-4">
                 <div className="flex items-center justify-between text-xs text-[#7A746B]">
-                  <span className="font-medium text-[#1C1A18]">Card Information</span>
-                  <div className="flex gap-2 text-[10px] font-mono text-[#8C6D3B]">
+                  <span className="font-medium text-[#222222]">Card Information</span>
+                  <div className="flex gap-2 text-[10px] font-mono text-[#b88e22]">
                     <span>🔒 SSL SECURE</span>
                   </div>
                 </div>
@@ -357,7 +357,7 @@ export const CheckoutModal: React.FC = () => {
                     value={cardNumber}
                     onChange={(e) => setCardNumber(e.target.value)}
                     placeholder="Card Number"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF7F2] border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457] font-mono"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF7F2] border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37] font-mono"
                   />
                 </div>
 
@@ -367,14 +367,14 @@ export const CheckoutModal: React.FC = () => {
                     value={cardExpiry}
                     onChange={(e) => setCardExpiry(e.target.value)}
                     placeholder="MM / YY"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF7F2] border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457] font-mono"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF7F2] border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37] font-mono"
                   />
                   <input
                     type="text"
                     value={cardCvc}
                     onChange={(e) => setCardCvc(e.target.value)}
                     placeholder="CVC"
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF7F2] border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#A58457] font-mono"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF7F2] border border-[#D9D2C7] rounded-[8px] focus:outline-none focus:border-[#daaf37] font-mono"
                   />
                 </div>
               </div>
@@ -383,12 +383,12 @@ export const CheckoutModal: React.FC = () => {
               <div className="p-4 bg-[#F4EFEA] rounded-[8px] border border-[#E2DBD0] text-xs flex items-center justify-between">
                 <div>
                   <span className="text-[#7A746B]">Recipient:</span>{' '}
-                  <strong className="text-[#1C1A18]">{recipientName}</strong> · {city}, {country}
+                  <strong className="text-[#222222]">{recipientName}</strong> · {city}, {country}
                 </div>
                 <button
                   type="button"
                   onClick={() => setStep('details')}
-                  className="text-[#8C6D3B] underline hover:text-[#1C1A18] cursor-pointer"
+                  className="text-[#b88e22] underline hover:text-[#222222] cursor-pointer"
                 >
                   Edit
                 </button>
@@ -399,7 +399,7 @@ export const CheckoutModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setStep('details')}
-                  className="text-xs text-[#5C574F] hover:text-[#1C1A18] flex items-center gap-1 cursor-pointer"
+                  className="text-xs text-[#5C574F] hover:text-[#222222] flex items-center gap-1 cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Back to Delivery Info</span>
@@ -409,13 +409,13 @@ export const CheckoutModal: React.FC = () => {
                   type="button"
                   disabled={isProcessing}
                   onClick={handleCompleteOrder}
-                  className="px-8 py-3.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-sm font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-lg disabled:opacity-50"
+                  className="px-8 py-3.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-sm font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-lg disabled:opacity-50"
                 >
                   {isProcessing ? (
                     <span>Penned & Finalizing Order...</span>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4 text-[#C5A880]" />
+                      <Sparkles className="w-4 h-4 text-[#daaf37]" />
                       <span>Confirm & Place Order · ${subtotal}</span>
                     </>
                   )}
@@ -429,15 +429,15 @@ export const CheckoutModal: React.FC = () => {
           {step === 'confirmed' && (
             <div className="space-y-6 text-center animate-in fade-in zoom-in-95 duration-300">
               
-              <div className="w-16 h-16 rounded-full bg-[#FAF7F2] border-2 border-[#C5A880] flex items-center justify-center text-[#245D33] mx-auto shadow-inner">
+              <div className="w-16 h-16 rounded-full bg-[#FAF7F2] border-2 border-[#daaf37] flex items-center justify-center text-[#245D33] mx-auto shadow-inner">
                 <Check className="w-8 h-8 stroke-[2.5]" />
               </div>
 
               <div className="space-y-1">
-                <span className="text-[11px] uppercase tracking-widest text-[#8C6D3B] font-semibold">
+                <span className="text-[11px] uppercase tracking-widest text-[#daaf37] font-semibold">
                   Order Confirmed & Atelier Dispatched
                 </span>
-                <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#1C1A18] font-medium">
+                <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#222222] font-medium">
                   Your hug is on its way.
                 </h3>
                 <p className="text-xs text-[#66615B] max-w-md mx-auto">
@@ -450,18 +450,18 @@ export const CheckoutModal: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 border-b border-[#F0EAE1]">
                   <div>
                     <div className="text-[10px] uppercase tracking-wider text-[#8C8479]">Order Reference</div>
-                    <div className="font-mono text-sm font-bold text-[#1C1A18]">{orderId}</div>
+                    <div className="font-mono text-sm font-bold text-[#222222]">{orderId}</div>
                   </div>
                   <div className="text-right">
                     <div className="text-[10px] uppercase tracking-wider text-[#8C8479]">Date Placed</div>
-                    <div className="text-xs font-medium text-[#1C1A18]">{orderDate}</div>
+                    <div className="text-xs font-medium text-[#222222]">{orderDate}</div>
                   </div>
                 </div>
 
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
                     <span className="text-[#7A746B]">Milestone Recipient:</span>
-                    <span className="font-semibold text-[#1C1A18]">{recipientName}</span>
+                    <span className="font-semibold text-[#222222]">{recipientName}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#7A746B]">Destination:</span>
@@ -469,7 +469,7 @@ export const CheckoutModal: React.FC = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#7A746B]">Courier Service:</span>
-                    <span className="text-[#8C6D3B] font-medium">Marvel Me White-Glove Hand Delivery</span>
+                    <span className="text-[#b88e22] font-medium">Marvel Me White-Glove Hand Delivery</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#7A746B]">Personalized Calligraphy:</span>
@@ -479,12 +479,12 @@ export const CheckoutModal: React.FC = () => {
 
                 {/* Milestone Delivery Tracker */}
                 <div className="pt-3 border-t border-[#F0EAE1] space-y-2">
-                  <div className="text-[11px] font-semibold text-[#1C1A18]">Live Delivery Timeline</div>
+                  <div className="text-[11px] font-semibold text-[#222222]">Live Delivery Timeline</div>
                   <div className="grid grid-cols-4 gap-1 text-center text-[10px]">
-                    <div className="p-1.5 bg-[#FAF7F2] border border-[#C5A880] rounded-[4px] text-[#8C6D3B] font-semibold">
+                    <div className="p-1.5 bg-[#FAF7F2] border border-[#daaf37] rounded-[4px] text-[#b88e22] font-semibold">
                       1. Placed ✓
                     </div>
-                    <div className="p-1.5 bg-[#FAF7F2] border border-[#C5A880]/50 rounded-[4px] text-[#8C6D3B] font-semibold">
+                    <div className="p-1.5 bg-[#FAF7F2] border border-[#daaf37]/50 rounded-[4px] text-[#b88e22] font-semibold">
                       2. Curating
                     </div>
                     <div className="p-1.5 bg-[#F9F6F0] rounded-[4px] text-[#A8A29E]">
@@ -502,7 +502,7 @@ export const CheckoutModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => window.print()}
-                  className="px-4 py-2.5 bg-white border border-[#D9D2C7] text-xs font-medium rounded-[8px] hover:border-[#A58457] transition-colors flex items-center gap-2 cursor-pointer"
+                  className="px-4 py-2.5 bg-white border border-[#D9D2C7] text-xs font-medium rounded-[8px] hover:border-[#daaf37] transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   <Printer className="w-3.5 h-3.5" />
                   <span>Print Gift Receipt</span>
@@ -511,7 +511,7 @@ export const CheckoutModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsCheckoutOpen(false)}
-                  className="px-6 py-2.5 bg-[#1C1A18] text-[#FAF7F2] hover:bg-[#33302C] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
                 >
                   Return to Marvel Me Boutique
                 </button>
