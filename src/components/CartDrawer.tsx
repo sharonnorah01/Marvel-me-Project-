@@ -128,7 +128,7 @@ export const CartDrawer: React.FC = () => {
                         </div>
 
                         <p className="text-[11px] text-[#d9a300] uppercase tracking-wider font-semibold mt-0.5">
-                          {item.product.category}
+                          {item.product.treasureCategory || item.product.category}
                         </p>
 
                         <div className="text-xs font-bold text-[#222222] mt-1 tabular-nums">

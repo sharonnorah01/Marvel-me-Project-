@@ -102,7 +102,7 @@ export const WishlistDrawer: React.FC = () => {
                     <div>
                       <div className="flex items-start justify-between gap-2">
                         <span className="text-[10px] uppercase tracking-wider font-semibold text-[#b88e22]">
-                          {product.category}
+                          {product.treasureCategory || product.category}
                         </span>
                         <button
                           onClick={() => toggleWishlist(product.id)}

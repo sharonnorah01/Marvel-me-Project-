@@ -6,11 +6,15 @@ import { handleImageFallback } from '../utils/images';
 
 interface ProductCardProps {
   product: Product;
+  overrideCategory?: string;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, overrideCategory }) => {
   const { setActiveProductDetail, toggleWishlist, isInWishlist } = useCart();
   const isFavorited = isInWishlist(product.id);
+
+  // Treasure hunt gift cards should show their exact sub-categories (e.g. 'Gifts for Her', 'Gifts for Him') not the curations categories
+  const displayCategory = overrideCategory || product.treasureCategory || product.category;
 
   return (
     <div
@@ -79,7 +83,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {/* Category & Rating Row */}
           <div className="flex items-center justify-between text-xs text-[#7A746B] mb-1">
             <span className="uppercase tracking-wider text-[11px] font-semibold text-[#b88e22]">
-              {product.category}
+              {displayCategory}
             </span>
             <div className="flex items-center gap-1">
               <Star className="w-3.5 h-3.5 fill-[#daaf37] text-[#daaf37]" />

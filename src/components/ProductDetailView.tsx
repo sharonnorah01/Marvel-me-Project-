@@ -111,7 +111,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
               <span>Back to Collection</span>
             </button>
             <span aria-hidden="true">·</span>
-            <span className="uppercase tracking-wider text-[#daaf37] font-semibold">{product.category}</span>
+            <span className="uppercase tracking-wider text-[#daaf37] font-semibold">{product.treasureCategory || product.category}</span>
           </div>
 
           <button
@@ -328,7 +328,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
               <div className="bg-white p-6 rounded-[8px] border border-[#E2DBD0] shadow-sm space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs uppercase tracking-wider font-semibold text-[#daaf37]">
-                    {product.category}
+                    {product.treasureCategory || product.category}
                   </span>
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1 text-xs text-[#7A746B]">
