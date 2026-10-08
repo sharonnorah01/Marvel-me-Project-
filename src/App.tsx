@@ -9,10 +9,12 @@ import { Navbar } from './components/Navbar';
 import { HomeView } from './components/HomeView';
 import { ShopView } from './components/ShopView';
 import { AboutView } from './components/AboutView';
+import { TreasureCategoryView } from './components/TreasureCategoryView';
 import { ProductDetailView } from './components/ProductDetailView';
 import { GiftRecommendationQuizModal } from './components/GiftRecommendationQuiz';
 import { ConsultationModal } from './components/ConsultationModal';
 import { CartDrawer } from './components/CartDrawer';
+import { WishlistDrawer } from './components/WishlistDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { Footer } from './components/Footer';
 
@@ -29,6 +31,7 @@ const MainLayout: React.FC = () => {
         {currentView === 'home' && <HomeView />}
         {currentView === 'shop' && <ShopView />}
         {currentView === 'about' && <AboutView />}
+        {currentView === 'treasure-category' && <TreasureCategoryView />}
       </main>
 
       {/* Global Modals & Drawers */}
@@ -47,6 +50,9 @@ const MainLayout: React.FC = () => {
 
       {/* Shopping Bag Slide-Over Drawer */}
       <CartDrawer />
+
+      {/* Wishlist Saved Curations Drawer */}
+      <WishlistDrawer />
 
       {/* Seamless Luxury Checkout Process */}
       <CheckoutModal />

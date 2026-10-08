@@ -1,7 +1,7 @@
 import React from 'react';
 import { Product } from '../data/products';
 import { useCart } from '../context/CartContext';
-import { Star, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Star, Sparkles, ArrowUpRight, Heart } from 'lucide-react';
 import { handleImageFallback } from '../utils/images';
 
 interface ProductCardProps {
@@ -9,7 +9,8 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { setActiveProductDetail } = useCart();
+  const { setActiveProductDetail, toggleWishlist, isInWishlist } = useCart();
+  const isFavorited = isInWishlist(product.id);
 
   return (
     <div
@@ -37,6 +38,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             Signature
           </div>
         )}
+
+        {/* Wishlist toggle button */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleWishlist(product.id);
+          }}
+          aria-label={isFavorited ? 'Remove from wishlist' : 'Save to wishlist'}
+          className="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-sm border border-[#E2DBD0] hover:border-[#daaf37] text-[#222222] transition-all hover:scale-110 shadow-sm z-10 cursor-pointer"
+        >
+          <Heart
+            className={`w-4 h-4 transition-colors ${
+              isFavorited
+                ? 'fill-[#daaf37] text-[#daaf37]'
+                : 'text-[#5C574F] hover:text-[#daaf37]'
+            }`}
+          />
+        </button>
 
         {/* Quick view / customize overlay hover button */}
         <div className="absolute inset-0 bg-[#222222]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">

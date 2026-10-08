@@ -17,6 +17,12 @@ interface CartContextType {
   subtotal: number;
   isCartOpen: boolean;
   setIsCartOpen: (open: boolean) => void;
+  isWishlistOpen: boolean;
+  setIsWishlistOpen: (open: boolean) => void;
+  wishlist: string[];
+  wishlistCount: number;
+  toggleWishlist: (productId: string) => void;
+  isInWishlist: (productId: string) => boolean;
   isQuizOpen: boolean;
   setIsQuizOpen: (open: boolean) => void;
   isConsultationOpen: boolean;
@@ -25,8 +31,11 @@ interface CartContextType {
   setIsCheckoutOpen: (open: boolean) => void;
   activeProductDetail: Product | null;
   setActiveProductDetail: (product: Product | null) => void;
-  currentView: 'home' | 'shop' | 'about';
-  setCurrentView: (view: 'home' | 'shop' | 'about') => void;
+  currentView: 'home' | 'shop' | 'about' | 'treasure-category';
+  setCurrentView: (view: 'home' | 'shop' | 'about' | 'treasure-category') => void;
+  activeTreasureCategory: string;
+  setActiveTreasureCategory: (category: string) => void;
+  openTreasureCategory: (category: string) => void;
   selectedCategoryFilter: string;
   setSelectedCategoryFilter: (category: string) => void;
   searchQuery: string;
@@ -69,14 +78,31 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   });
 
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
+  const [wishlist, setWishlist] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('marvel_me_wishlist');
+      if (saved) return JSON.parse(saved);
+    } catch {
+      // fallback
+    }
+    return ['prod-1', 'prod-4'];
+  });
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [activeProductDetail, setActiveProductDetail] = useState<Product | null>(null);
-  const [currentView, setCurrentView] = useState<'home' | 'shop' | 'about'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'shop' | 'about' | 'treasure-category'>('home');
+  const [activeTreasureCategory, setActiveTreasureCategory] = useState<string>('gifts-for-her');
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
+
+  const openTreasureCategory = (category: string) => {
+    setActiveTreasureCategory(category);
+    setCurrentView('treasure-category');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     try {
@@ -85,6 +111,22 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // ignore
     }
   }, [cart]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('marvel_me_wishlist', JSON.stringify(wishlist));
+    } catch {
+      // ignore
+    }
+  }, [wishlist]);
+
+  const toggleWishlist = (productId: string) => {
+    setWishlist((prev) =>
+      prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]
+    );
+  };
+
+  const isInWishlist = (productId: string) => wishlist.includes(productId);
 
   const addToCart = (
     product: Product,
@@ -126,6 +168,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const wishlistCount = wishlist.length;
 
   const subtotal = cart.reduce((acc, item) => {
     const itemCost = item.product.price + item.wrappingOption.price;
@@ -144,6 +187,12 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         subtotal,
         isCartOpen,
         setIsCartOpen,
+        isWishlistOpen,
+        setIsWishlistOpen,
+        wishlist,
+        wishlistCount,
+        toggleWishlist,
+        isInWishlist,
         isQuizOpen,
         setIsQuizOpen,
         isConsultationOpen,
@@ -154,6 +203,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setActiveProductDetail,
         currentView,
         setCurrentView,
+        activeTreasureCategory,
+        setActiveTreasureCategory,
+        openTreasureCategory,
         selectedCategoryFilter,
         setSelectedCategoryFilter,
         searchQuery,

@@ -1,57 +1,29 @@
 import React from 'react';
 import { Hero } from './Hero';
 import { CategoryNavigation } from './CategoryNavigation';
-import { ProductCard } from './ProductCard';
-import { PRODUCTS } from '../data/products';
+import { TreasureHuntSection } from './TreasureHuntSection';
+import { CuratedMasterpiecesSection } from './CuratedMasterpiecesSection';
 import { useCart } from '../context/CartContext';
 import { Sparkles, ArrowRight, Ribbon, HeartHandshake, ShieldCheck, Star } from 'lucide-react';
 
 export const HomeView: React.FC = () => {
   const { setCurrentView, setSelectedCategoryFilter, setIsQuizOpen, setIsConsultationOpen } = useCart();
 
-  const featuredHampers = PRODUCTS.filter((p) => p.featured);
-
   return (
-    <div className="space-y-16 lg:space-y-24">
-      {/* 1. Hero with Slogan 'Gifts that feel like a hug' */}
-      <Hero />
+    <div className="space-y-12 sm:space-y-16 lg:space-y-20">
+      {/* 1 & 2. Hero and Gift Curations with reduced space */}
+      <div className="space-y-2 sm:space-y-4">
+        <Hero />
+        <CategoryNavigation />
+      </div>
 
-      {/* 2. Category Navigation Strip */}
-      <CategoryNavigation />
+      {/* 3. TREASURE HUNT Section for Personalized Gifts */}
+      <TreasureHuntSection />
 
-      {/* 3. Featured Curations Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-          <div>
-            <div className="text-xs uppercase tracking-widest text-[#b88e22] font-semibold mb-1">
-              Curated Masterpieces
-            </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-4xl text-[#222222] font-medium">
-              Signature Gift Experiences
-            </h2>
-          </div>
+      {/* 4. Curated Masterpieces Section with 5 Category Cards */}
+      <CuratedMasterpiecesSection />
 
-          <button
-            onClick={() => {
-              setCurrentView('shop');
-              setSelectedCategoryFilter('All');
-            }}
-            className="text-xs font-semibold text-[#222222] hover:text-[#daaf37] flex items-center gap-1.5 transition-colors cursor-pointer"
-          >
-            <span>Explore All Curations</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
-        {/* 3-Column Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {featuredHampers.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
-
-      {/* 4. The Anatomy of a Marvel Me Hug (Editorial Craftsmanship Spotlight) */}
+      {/* 5. The Anatomy of a Marvel Me Hug (Editorial Craftsmanship Spotlight) */}
       <section className="bg-white py-16 sm:py-20 border-y border-[#E8E2D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">

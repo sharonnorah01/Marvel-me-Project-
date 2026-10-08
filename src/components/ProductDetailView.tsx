@@ -14,7 +14,8 @@ interface ProductDetailViewProps {
 }
 
 export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, onClose }) => {
-  const { addToCart } = useCart();
+  const { addToCart, toggleWishlist, isInWishlist } = useCart();
+  const isFavorited = isInWishlist(product.id);
 
   // Active image index
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -147,7 +148,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
 
               {/* Thumbnails Strip */}
               {product.images.length > 1 && (
-                <div className="flex gap-3 overflow-x-auto pb-1">
+                <div className="flex gap-3 overflow-x-auto no-scrollbar scrollbar-none pb-1">
                   {product.images.map((img, idx) => (
                     <button
                       key={idx}
@@ -329,9 +330,24 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                   <span className="text-xs uppercase tracking-wider font-semibold text-[#daaf37]">
                     {product.category}
                   </span>
-                  <div className="flex items-center gap-1 text-xs text-[#7A746B]">
-                    <Star className="w-3.5 h-3.5 fill-[#daaf37] text-[#daaf37]" />
-                    <span className="font-semibold text-[#222222] tabular-nums">{product.rating}</span>
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1 text-xs text-[#7A746B]">
+                      <Star className="w-3.5 h-3.5 fill-[#daaf37] text-[#daaf37]" />
+                      <span className="font-semibold text-[#222222] tabular-nums">{product.rating}</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => toggleWishlist(product.id)}
+                      aria-label={isFavorited ? 'Remove from wishlist' : 'Save to wishlist'}
+                      className="p-1.5 rounded-full border border-[#E2DBD0] hover:border-[#daaf37] transition-all hover:scale-105 cursor-pointer bg-[#FAF7F2]"
+                      title={isFavorited ? 'Remove from Wishlist' : 'Save to Wishlist'}
+                    >
+                      <Heart
+                        className={`w-4 h-4 transition-colors ${
+                          isFavorited ? 'text-[#daaf37] fill-[#daaf37]' : 'text-[#5C574F]'
+                        }`}
+                      />
+                    </button>
                   </div>
                 </div>
 

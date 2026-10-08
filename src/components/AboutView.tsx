@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
 import { Heart, Sparkles, Ribbon, ShieldCheck, ArrowRight, Award, Compass, Users } from 'lucide-react';
-import { productGiftWrapping } from '../assets/images';
+import { productGiftWrapping, corporateNotebooks } from '../assets/images';
 import { handleImageFallback } from '../utils/images';
 
 export const AboutView: React.FC = () => {
@@ -165,14 +165,29 @@ export const AboutView: React.FC = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-4 p-6 bg-white/5 backdrop-blur-md rounded-[8px] border border-white/10 space-y-3 text-xs">
-          <div className="font-serif-luxury text-lg text-[#daaf37]">Corporate Capabilities</div>
-          <ul className="space-y-2 text-[#D1C9BC]">
-            <li>✦ Multi-destination global delivery coordination</li>
-            <li>✦ Custom Pantone silk ribbon matching</li>
-            <li>✦ Bespoke laser engraving & blind debossing</li>
-            <li>✦ Dedicated senior concierge account manager</li>
-          </ul>
+        <div className="lg:col-span-4 space-y-4">
+          <div className="rounded-[8px] overflow-hidden border border-white/20 aspect-[4/3] bg-black/40 relative shadow-lg">
+            <img
+              src={corporateNotebooks}
+              onError={(e) => handleImageFallback(e, 'corporate')}
+              alt="Marvel Me Corporate Gifting - Bespoke Executive Notebooks"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute bottom-2 left-2 bg-[#222222]/80 backdrop-blur-sm text-[10px] text-[#FAF7F2] px-2 py-0.5 rounded-[4px] border border-white/20">
+              Executive Keepsake Suite
+            </div>
+          </div>
+
+          <div className="p-5 bg-white/5 backdrop-blur-md rounded-[8px] border border-white/10 space-y-2.5 text-xs">
+            <div className="font-serif-luxury text-lg text-[#daaf37]">Corporate Capabilities</div>
+            <ul className="space-y-2 text-[#D1C9BC]">
+              <li>✦ Multi-destination global delivery coordination</li>
+              <li>✦ Custom Pantone silk ribbon matching</li>
+              <li>✦ Bespoke laser engraving & blind debossing</li>
+              <li>✦ Dedicated senior concierge account manager</li>
+            </ul>
+          </div>
         </div>
       </section>
 

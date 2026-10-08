@@ -2,8 +2,9 @@ import React, { useState, useMemo } from 'react';
 import { PRODUCTS, Product } from '../data/products';
 import { ProductCard } from './ProductCard';
 import { useCart } from '../context/CartContext';
-import { Search, Filter, SlidersHorizontal, Sparkles, X, ArrowUpDown } from 'lucide-react';
+import { Search, Filter, SlidersHorizontal, Sparkles, X, ArrowUpDown, Compass } from 'lucide-react';
 import { CATEGORIES } from './CategoryNavigation';
+import { TREASURE_CATEGORIES } from './TreasureHuntSection';
 
 export const ShopView: React.FC = () => {
   const {
@@ -14,12 +15,16 @@ export const ShopView: React.FC = () => {
     setIsQuizOpen,
   } = useCart();
 
-  const [selectedOccasion, setSelectedOccasion] = useState<string>('All');
+  const [selectedTreasureCategory, setSelectedTreasureCategory] = useState<string>('All');
   const [priceRange, setPriceRange] = useState<'All' | 'under100' | '100to200' | 'over200'>('All');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
-  const occasionsList = ['All', 'Birthday', 'Anniversary', 'Romantic', 'Thank You', 'Milestone', 'Corporate', 'Self-Care'];
+  // Treasure Hunt categories list for filter
+  const treasureCategoriesList = [
+    { id: 'All', name: 'All Treasures' },
+    ...TREASURE_CATEGORIES.map((cat) => ({ id: cat.id, name: cat.name })),
+  ];
 
   // Filtered & Sorted Products
   const filteredProducts = useMemo(() => {
@@ -36,17 +41,35 @@ export const ShopView: React.FC = () => {
         const matchesDesc = product.description.toLowerCase().includes(query);
         const matchesTagline = product.tagline.toLowerCase().includes(query);
         const matchesCategory = product.category.toLowerCase().includes(query);
-        if (!matchesName && !matchesDesc && !matchesTagline && !matchesCategory) {
+        const matchesOccasion = product.occasions.some((occ) => occ.toLowerCase().includes(query));
+        if (!matchesName && !matchesDesc && !matchesTagline && !matchesCategory && !matchesOccasion) {
           return false;
         }
       }
 
-      // Occasion check
-      if (selectedOccasion !== 'All') {
+      // Treasure Hunt Category check
+      if (selectedTreasureCategory !== 'All') {
+        const selectedCatObj = TREASURE_CATEGORIES.find((c) => c.id === selectedTreasureCategory);
+        const targetName = selectedCatObj ? selectedCatObj.name : selectedTreasureCategory;
+
         const hasOccasion = product.occasions.some((occ) =>
-          occ.toLowerCase().includes(selectedOccasion.toLowerCase())
+          occ.toLowerCase() === targetName.toLowerCase()
         );
-        if (!hasOccasion) return false;
+
+        let matchesTreasure = hasOccasion;
+        if (selectedTreasureCategory === 'gifts-for-her') {
+          matchesTreasure = matchesTreasure || product.occasions.includes('Romantic') || product.occasions.includes('Self-Care') || product.id === 'the-golden-reverie-hamper';
+        } else if (selectedTreasureCategory === 'gifts-for-him') {
+          matchesTreasure = matchesTreasure || product.category === 'Corporate Gifting' || product.id === 'the-artisan-heritage-valet-suite';
+        } else if (selectedTreasureCategory === 'baby-corner') {
+          matchesTreasure = matchesTreasure || product.id === 'heirloom-baby-lullaby-chest';
+        } else if (selectedTreasureCategory === 'kids-teens') {
+          matchesTreasure = matchesTreasure || product.id === 'celestial-stargazer-adventure-chest' || product.category === 'Gift Surprises';
+        } else if (selectedTreasureCategory === 'gifts-for-me') {
+          matchesTreasure = matchesTreasure || product.occasions.includes('Self-Care') || product.id === 'serenity-solitude-ritual-hamper';
+        }
+
+        if (!matchesTreasure) return false;
       }
 
       // Price range check
@@ -61,7 +84,7 @@ export const ShopView: React.FC = () => {
       if (sortBy === 'rating') return b.rating - a.rating;
       return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
     });
-  }, [selectedCategoryFilter, searchQuery, selectedOccasion, priceRange, sortBy]);
+  }, [selectedCategoryFilter, searchQuery, selectedTreasureCategory, priceRange, sortBy]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -71,13 +94,13 @@ export const ShopView: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="text-xs uppercase tracking-widest text-[#d9a300] font-semibold mb-1">
-              Curated Gift Catalog
+              Complete Gift Shop · Treasure Hunt & Curations
             </div>
             <h1 className="font-serif-luxury text-3xl sm:text-4xl text-[#222222] font-medium">
-              Explore The Marvel Me Collection
+              Explore All Marvel Me Gifts
             </h1>
             <p className="text-xs sm:text-sm text-[#66615B] mt-1 max-w-xl">
-              From comforting sensory hampers to opulent picnic experiences. Every item includes bespoke gift wrapping and hand-penned calligraphy notes.
+              Explore our complete collection spanning personalized Treasure Hunt offerings and artisanal gift curations. Every item includes bespoke gift wrapping and hand-penned calligraphy.
             </p>
           </div>
 
@@ -89,8 +112,8 @@ export const ShopView: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5 text-[#daaf37]" />
               <span>Take Gift Quiz</span>
             </button>
-            <span className="text-xs text-[#7A746B] tabular-nums">
-              Showing {filteredProducts.length} curations
+            <span className="text-xs text-[#7A746B] tabular-nums font-medium">
+              Showing {filteredProducts.length} of {PRODUCTS.length} gifts
             </span>
           </div>
         </div>
@@ -120,23 +143,24 @@ export const ShopView: React.FC = () => {
         {/* Secondary Filter & Sort Bar */}
         <div className="bg-white p-4 rounded-[8px] border border-[#E2DBD0] flex flex-wrap items-center justify-between gap-4 text-xs">
           
-          {/* Occasion Filter */}
-          <div className="flex items-center gap-2 overflow-x-auto">
-            <span className="font-semibold text-[#222222] uppercase tracking-wider text-[11px] shrink-0">
-              Occasion:
+          {/* Treasure Hunt Categories Filter */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scrollbar-none">
+            <span className="font-semibold text-[#222222] uppercase tracking-wider text-[11px] shrink-0 flex items-center gap-1">
+              <Compass className="w-3 h-3 text-[#daaf37]" />
+              <span>All Treasures:</span>
             </span>
-            <div className="flex gap-1.5 overflow-x-auto">
-              {occasionsList.map((occ) => (
+            <div className="flex gap-1.5 overflow-x-auto no-scrollbar scrollbar-none">
+              {treasureCategoriesList.map((treasureCat) => (
                 <button
-                  key={occ}
-                  onClick={() => setSelectedOccasion(occ)}
+                  key={treasureCat.id}
+                  onClick={() => setSelectedTreasureCategory(treasureCat.id)}
                   className={`px-2.5 py-1 rounded-[6px] text-xs transition-colors cursor-pointer whitespace-nowrap ${
-                    selectedOccasion === occ
-                      ? 'bg-[#FAF7F2] text-[#b88e22] font-bold border border-[#daaf37]'
+                    selectedTreasureCategory === treasureCat.id
+                      ? 'bg-[#FAF7F2] text-[#b88e22] font-bold border border-[#daaf37] shadow-2xs'
                       : 'text-[#66615B] hover:text-[#222222]'
                   }`}
                 >
-                  {occ}
+                  {treasureCat.name}
                 </button>
               ))}
             </div>
@@ -175,11 +199,11 @@ export const ShopView: React.FC = () => {
             </div>
 
             {/* Reset Filters */}
-            {(selectedCategoryFilter !== 'All' || selectedOccasion !== 'All' || priceRange !== 'All' || searchQuery) && (
+            {(selectedCategoryFilter !== 'All' || selectedTreasureCategory !== 'All' || priceRange !== 'All' || searchQuery) && (
               <button
                 onClick={() => {
                   setSelectedCategoryFilter('All');
-                  setSelectedOccasion('All');
+                  setSelectedTreasureCategory('All');
                   setPriceRange('All');
                   setSearchQuery('');
                 }}
@@ -204,12 +228,12 @@ export const ShopView: React.FC = () => {
             No curations matched your filters
           </h3>
           <p className="text-xs text-[#7A746B] max-w-sm mx-auto leading-relaxed">
-            Try adjusting your budget or selected occasion to browse more gifts that feel like a hug.
+            Try adjusting your budget or selected treasure category to browse more gifts that feel like a hug.
           </p>
           <button
             onClick={() => {
               setSelectedCategoryFilter('All');
-              setSelectedOccasion('All');
+              setSelectedTreasureCategory('All');
               setPriceRange('All');
               setSearchQuery('');
             }}

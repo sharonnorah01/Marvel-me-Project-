@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   const { setCurrentView, setSelectedCategoryFilter, setIsQuizOpen, setIsConsultationOpen } = useCart();
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 lg:pt-12 lg:pb-24">
+    <section className="relative overflow-hidden pt-6 pb-4 sm:pt-8 sm:pb-6 lg:pt-10 lg:pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Split Hero Layout */}

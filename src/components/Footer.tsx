@@ -180,6 +180,20 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button
+                  onClick={() => {
+                    setCurrentView('home');
+                    setTimeout(() => {
+                      document.getElementById('treasure-hunt')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
+                  className="hover:text-white transition-colors cursor-pointer flex items-center gap-1.5"
+                >
+                  <span className="text-[#daaf37]">✦</span>
+                  <span>Treasure Hunt (Personalized Gifts)</span>
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => setCurrentView('about')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
