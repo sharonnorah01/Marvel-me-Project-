@@ -187,9 +187,9 @@ export const ConsultationModal: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
+                  className="px-6 py-2.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#daaf37]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#222222]" />
                   <span>Request Stylist Appointment</span>
                 </button>
               </div>
@@ -222,7 +222,7 @@ export const ConsultationModal: React.FC = () => {
               <button
                 type="button"
                 onClick={handleClose}
-                className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-medium rounded-[8px] transition-colors cursor-pointer"
+                className="px-6 py-2.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer shadow-sm"
               >
                 Return to Shop
               </button>

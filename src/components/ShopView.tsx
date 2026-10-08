@@ -237,7 +237,7 @@ export const ShopView: React.FC = () => {
               setPriceRange('All');
               setSearchQuery('');
             }}
-            className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] text-xs font-semibold rounded-[8px] hover:bg-[#333333] transition-colors cursor-pointer"
+            className="px-6 py-2.5 bg-[#daaf37] text-[#222222] text-xs font-semibold rounded-[8px] hover:bg-[#c49b2c] transition-colors cursor-pointer shadow-sm"
           >
             Clear All Filters
           </button>
@@ -271,7 +271,7 @@ export const ShopView: React.FC = () => {
               setSelectedCategoryFilter('Gift Consultations');
             }
           }}
-          className="px-6 py-3 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors shrink-0 cursor-pointer shadow-sm"
+          className="px-6 py-3 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors shrink-0 cursor-pointer shadow-sm"
         >
           Explore Consultation Service
         </button>

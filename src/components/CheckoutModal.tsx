@@ -274,10 +274,10 @@ export const CheckoutModal: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-md"
+                  className="px-6 py-3 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Continue to Payment</span>
-                  <ArrowRight className="w-4 h-4 text-[#daaf37]" />
+                  <ArrowRight className="w-4 h-4 text-[#222222]" />
                 </button>
               </div>
 
@@ -409,13 +409,13 @@ export const CheckoutModal: React.FC = () => {
                   type="button"
                   disabled={isProcessing}
                   onClick={handleCompleteOrder}
-                  className="px-8 py-3.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-sm font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-lg disabled:opacity-50"
+                  className="px-8 py-3.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-sm font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-lg disabled:opacity-50"
                 >
                   {isProcessing ? (
                     <span>Penned & Finalizing Order...</span>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4 text-[#daaf37]" />
+                      <Sparkles className="w-4 h-4 text-[#222222]" />
                       <span>Confirm & Place Order · ${subtotal}</span>
                     </>
                   )}
@@ -511,7 +511,7 @@ export const CheckoutModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsCheckoutOpen(false)}
-                  className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer shadow-sm"
                 >
                   Return to Marvel Me Boutique
                 </button>

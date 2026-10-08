@@ -92,7 +92,7 @@ export const CartDrawer: React.FC = () => {
                     setIsCartOpen(false);
                     setCurrentView('shop');
                   }}
-                  className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] rounded-[8px] text-xs font-semibold hover:bg-[#333333] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#daaf37] text-[#222222] rounded-[8px] text-xs font-semibold hover:bg-[#c49b2c] transition-colors cursor-pointer shadow-sm"
                 >
                   Explore Gift Catalog
                 </button>
@@ -222,11 +222,11 @@ export const CartDrawer: React.FC = () => {
                   setIsCartOpen(false);
                   setIsCheckoutOpen(true);
                 }}
-                className="w-full py-4 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-sm font-semibold rounded-[8px] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                className="w-full py-4 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-sm font-semibold rounded-[8px] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
-                <Lock className="w-4 h-4 text-[#daaf37]" />
+                <Lock className="w-4 h-4 text-[#222222]" />
                 <span>Seamless Checkout · ${subtotal}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#222222]" />
               </button>
 
               <div className="text-center text-[11px] text-[#8C8479]">

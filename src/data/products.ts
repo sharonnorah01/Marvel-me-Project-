@@ -5,6 +5,7 @@ import {
   productGiftWrapping,
   productSurpriseBox,
   corporateNotebooks,
+  giftsForMe,
 } from '../assets/images';
 
 export interface CustomerReview {
@@ -522,6 +523,7 @@ export const PRODUCTS: Product[] = [
     ],
     dimensions: '30cm x 22cm x 12cm · Weight 2.1kg',
     images: [
+      giftsForMe,
       'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=900&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=900&auto=format&fit=crop',
       productLuxuryHamper,

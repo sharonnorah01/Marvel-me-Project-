@@ -81,7 +81,7 @@ export const TREASURE_CATEGORIES: TreasureCategory[] = [
     badge: 'Sacred Solitude',
     tagline: 'Mindful slow living, restorative rituals & tranquil bath sanctuaries',
     description: 'Because your soul deserves a heartfelt hug. Treat yourself to guilty-pleasure artisanal chocolates, Himalayan herbal bath soaks, and slow-burning amber candles crafted to turn your home into an opulent refuge.',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=900&auto=format&fit=crop',
+    image: '/images/gifts_for_me.jpg',
     personalizedFeatures: [
       'Personal Intention & Affirmation Letterpress Card',
       'Choice of Hand-Blended Botanical Scent Profile',
@@ -145,10 +145,10 @@ export const TreasureHuntSection: React.FC = () => {
                 setCurrentView('shop');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-5 py-3 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-sm border border-[#222222]"
+              className="px-5 py-3 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-all flex items-center gap-2 cursor-pointer shadow-sm border border-[#daaf37]"
             >
               <span>Explore All Catalog</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#daaf37]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#222222]" />
             </button>
           </div>
         </div>

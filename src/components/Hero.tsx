@@ -41,10 +41,10 @@ export const Hero: React.FC = () => {
                   setCurrentView('shop');
                   setSelectedCategoryFilter('All');
                 }}
-                className="px-6 py-3.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-sm font-medium rounded-[8px] transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-sm"
+                className="px-6 py-3.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-sm font-semibold rounded-[8px] transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-md"
               >
                 <span>Explore Curated Gifts</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#daaf37]" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#222222]" />
               </button>
 
               <button

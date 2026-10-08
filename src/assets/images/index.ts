@@ -5,6 +5,7 @@ import productGiftWrapping from './product_gift_wrapping_1791316011135.jpg';
 import productSurpriseBox from './product_surprise_box_1791316021899.jpg';
 import corporateNotebooks from './notebook-1.jpg';
 import notebook1 from './notebook-1.jpg';
+import giftsForMe from './gifts_for_me_1791458598974.jpg';
 
 export {
   heroLuxuryGiftBox,
@@ -14,4 +15,5 @@ export {
   productSurpriseBox,
   corporateNotebooks,
   notebook1,
+  giftsForMe,
 };

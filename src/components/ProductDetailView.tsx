@@ -310,7 +310,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
 
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
+                      className="px-4 py-2 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer shadow-sm"
                     >
                       Publish Review
                     </button>
@@ -636,7 +636,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                   className={`w-full py-4 text-sm font-semibold rounded-[8px] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
                     isAddedSuccess
                       ? 'bg-[#2E6B3E] text-white'
-                      : 'bg-[#222222] text-[#FAF7F2] hover:bg-[#333333]'
+                      : 'bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c]'
                   }`}
                 >
                   {isAddedSuccess ? (
@@ -646,7 +646,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                     </>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4 text-[#daaf37]" />
+                      <Sparkles className="w-4 h-4 text-[#222222]" />
                       <span>Add to Bag · ${totalPrice}</span>
                     </>
                   )}

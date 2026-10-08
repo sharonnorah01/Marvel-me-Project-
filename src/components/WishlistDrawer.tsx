@@ -72,7 +72,7 @@ export const WishlistDrawer: React.FC = () => {
                     setSelectedCategoryFilter('All');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="px-6 py-2.5 bg-[#222222] text-[#FAF7F2] rounded-[8px] text-xs font-semibold hover:bg-[#333333] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#daaf37] text-[#222222] rounded-[8px] text-xs font-semibold hover:bg-[#c49b2c] transition-colors cursor-pointer shadow-sm"
                 >
                   Explore All Curations
                 </button>
@@ -156,10 +156,10 @@ export const WishlistDrawer: React.FC = () => {
                   setSelectedCategoryFilter('All');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="w-full py-3 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] rounded-[8px] text-xs font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+                className="w-full py-3 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] rounded-[8px] text-xs font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-md"
               >
                 <span>Continue Shopping Curations</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#222222]" />
               </button>
             </div>
           )}

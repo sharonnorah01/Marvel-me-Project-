@@ -250,7 +250,7 @@ export const GiftRecommendationQuizModal: React.FC = () => {
                               setIsQuizOpen(false);
                               setActiveProductDetail(product);
                             }}
-                            className="px-3 py-1.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer"
+                            className="px-3 py-1.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors cursor-pointer shadow-sm"
                           >
                             Personalize & View
                           </button>

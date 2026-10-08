@@ -10,6 +10,7 @@ export const LUXURY_FALLBACK_IMAGES = {
   wrapping: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200&auto=format&fit=crop',
   surprise: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1200&auto=format&fit=crop',
   corporate: '/images/notebook-1.jpg',
+  giftsForMe: '/images/gifts_for_me.jpg',
   lifestyle: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop',
 };
 
@@ -24,7 +25,9 @@ export function handleImageFallback(
   let fallback = LUXURY_FALLBACK_IMAGES.hero;
   const lower = (categoryOrType || '').toLowerCase();
 
-  if (lower.includes('corporate') || lower.includes('notebook')) {
+  if (lower.includes('gifts-for-me') || lower.includes('gifts for me') || lower.includes('solitude')) {
+    fallback = LUXURY_FALLBACK_IMAGES.giftsForMe;
+  } else if (lower.includes('corporate') || lower.includes('notebook')) {
     fallback = LUXURY_FALLBACK_IMAGES.corporate;
   } else if (lower.includes('hamper') || lower.includes('reverie')) {
     fallback = LUXURY_FALLBACK_IMAGES.hamper;
@@ -38,6 +41,12 @@ export function handleImageFallback(
 
   // Prevent infinite error looping
   if (target.dataset.hasFailedFallback === 'true') {
+    return;
+  }
+
+  if (currentSrc.includes('gifts_for_me') && !currentSrc.includes('/images/gifts_for_me.jpg')) {
+    target.src = '/images/gifts_for_me.jpg';
+    target.dataset.hasTriedLocal = 'true';
     return;
   }
 

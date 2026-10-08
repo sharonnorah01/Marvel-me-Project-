@@ -35,10 +35,10 @@ export const AboutView: React.FC = () => {
           <div className="pt-2 flex items-center gap-4">
             <button
               onClick={() => setCurrentView('shop')}
-              className="px-6 py-3.5 bg-[#222222] text-[#FAF7F2] hover:bg-[#333333] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
+              className="px-6 py-3.5 bg-[#daaf37] text-[#222222] hover:bg-[#c49b2c] text-xs font-semibold rounded-[8px] transition-colors flex items-center gap-2 cursor-pointer shadow-md"
             >
               <span>Explore Our Curations</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#daaf37]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#222222]" />
             </button>
 
             <button
