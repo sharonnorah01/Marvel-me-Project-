@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#b88e22] font-semibold">
               <span>Handcrafted Luxury Gifting</span>
               <span aria-hidden="true">·</span>
-              <span>Bespoke Keepsakes</span>
+              <span>Custom Curations</span>
             </div>
 
             {/* Slogan - Headline: Marvel Me's slogan 'Gifts that feel like a hug' */}
